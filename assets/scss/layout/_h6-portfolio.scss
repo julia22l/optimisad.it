@@ -1,0 +1,243 @@
+@use "../utilities" as *;
+/**----------------------------------------
+START: Home 6 Portfolio
+----------------------------------------*/
+.tj-portfolio-section {
+	// style-6 (home 6)
+	&.style-6 {
+		padding-top: 120px;
+		padding-bottom: 120px;
+		background: var(--tj-color-common-white);
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 100px;
+			width: 100%;
+			height: 550px;
+			background-image: url(../images/shape/h6-about-bg-shape.svg);
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		.tj-sec-heading.style-7 {
+			margin-bottom: 60px;
+		}
+		@media #{$xl, $lg} {
+			&::after {
+				background-size: contain;
+				bottom: 80px;
+			}
+		}
+		@media #{$md} {
+			padding-top: 100px;
+			padding-bottom: 100px;
+
+			&::after {
+				background-size: contain;
+				bottom: 60px;
+			}
+		}
+
+		@media #{$xs, $sm} {
+			padding-top: 80px;
+			padding-bottom: 80px;
+
+			&::after {
+				background-size: contain;
+				bottom: 60px;
+			}
+
+			.tj-sec-heading.style-7 {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+// home 06
+.portfolio_item {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	margin-bottom: 30px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			34.44deg,
+			var(--tj-color-theme-h6-primary) 11.59%,
+			rgba(255, 51, 68, 0) 81.87%
+		);
+		mix-blend-mode: color;
+		visibility: hidden;
+		opacity: 0;
+		z-index: 1;
+		@include transition(0.4s);
+	}
+
+	.portfolio_content {
+		background-color: var(--tj-color-theme-h6-primary);
+		padding: 23px 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 85%;
+		z-index: 2;
+		visibility: hidden;
+		opacity: 0;
+		@include transition(0.4s);
+
+		.content_text {
+			width: calc(100% - 70px);
+
+			.category {
+				display: block;
+				font-size: 16px;
+				line-height: 1;
+				color: var(--tj-color-common-white);
+				margin-bottom: 5px;
+			}
+			.title {
+				font-size: 20px;
+				line-height: 1.2;
+				color: var(--tj-color-common-white);
+				margin: 0;
+
+				a {
+					&:hover {
+						color: var(--tj-color-common-black);
+					}
+				}
+			}
+		}
+
+		.arrow_btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--tj-color-grey-10);
+			border-radius: 3px;
+			min-width: 60px;
+			color: var(--tj-color-common-black);
+			font-size: 25px;
+			line-height: 1;
+			padding: 8px 10px;
+			@include transition(0.4s);
+
+			i {
+				display: inline-flex;
+				line-height: 1;
+			}
+			&:hover {
+				background-color: var(--tj-color-common-black);
+				i {
+					color: var(--tj-color-common-white);
+				}
+			}
+		}
+	}
+
+	&:hover {
+		&::after {
+			visibility: visible;
+			opacity: 0.5;
+		}
+		.portfolio_content {
+			bottom: 40px;
+			visibility: visible;
+			opacity: 1;
+		}
+
+		@media #{$md, $xs} {
+			.portfolio_content {
+				bottom: 25px;
+			}
+		}
+		@media #{$sm} {
+			.portfolio_content {
+				bottom: 30px;
+			}
+		}
+	}
+
+	@media #{$md, $xs} {
+		.portfolio_content {
+			width: 90%;
+		}
+	}
+	@media #{$sm} {
+		max-width: 415px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+		.portfolio_content {
+			width: 90%;
+		}
+	}
+	@media #{$xs} {
+		.portfolio_content {
+			padding: 20px 15px;
+		}
+	}
+}
+.portfolio_carousel.style-6 {
+	.portfolio_item {
+		margin: 0;
+	}
+
+	.portfolio_pagination {
+		line-height: 1;
+		margin-top: 60px;
+		text-align: center;
+
+		.swiper-pagination-bullet {
+			width: 24px;
+			height: 24px;
+			border: 1px solid transparent;
+			background-color: transparent;
+			opacity: 0.1;
+			position: relative;
+			z-index: 1;
+			margin: 0;
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: 10px;
+				height: 10px;
+				background-color: var(--tj-color-theme-h6-primary);
+				border-radius: 50%;
+			}
+
+			&.swiper-pagination-bullet-active {
+				border-color: var(--tj-color-theme-h6-primary);
+				opacity: 1;
+			}
+		}
+
+		@media #{$md} {
+			margin-top: 50px;
+		}
+		@media #{$xs,$sm} {
+			margin-top: 40px;
+		}
+	}
+}
+/* !END: Home 6 Portfolio */

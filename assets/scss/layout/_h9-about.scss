@@ -1,0 +1,214 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme About CSS
+----------------------------------------*/
+.tj-about-section {
+   &.style-9 {
+      padding-top: 250px;
+      padding-bottom: 120px;
+      position: relative;
+      z-index: 2;
+      .shape-one {
+         position: absolute;
+         top: 50%;
+         left: 100px;
+         transform: translateY(-50%);
+         z-index: -1;
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .shape-two {
+         position: absolute;
+         bottom: 70px;
+         right: 20%;
+         z-index: -1;
+         opacity: 0.4;
+         @media #{$lg, $md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .shape-three {
+         position: absolute;
+         bottom: 50px;
+         left: 10%;
+         z-index: -1;
+         @media #{$lg, $md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .tj-sec-heading {
+         .title {
+            color: var(--tj-color-theme-h9-primary);
+            margin-bottom: 15px;
+            span {
+               color: var(--tj-color-grey-11);
+            }
+         }
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 230px;
+         padding-bottom: 80px;
+      }
+   }
+}
+
+.about_wrapper {
+   &.style-9 {
+      max-width: 560px;
+      position: relative;
+      z-index: 2;
+      .images-one {
+         position: relative;
+         z-index: 1;
+         max-width: 340px;
+         width: 100%;
+         padding-left: 10px;
+         &::before {
+            position: absolute;
+            content: "";
+            width: 95%;
+            height: 100%;
+            top: 10px;
+            left: 0;
+            background: var(--tj-color-theme-h9-primary);
+            z-index: -1;
+         }
+      }
+      .images-two {
+         position: absolute;
+         top: -150px;
+         right: 0;
+         max-width: 315px;
+         width: 100%;
+         .video_icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            bottom: -35px;
+            left: 50px;
+            line-height: 1;
+            border-radius: 50%;
+            z-index: 2;
+            background: rgba(87, 87, 87, 0.9);
+            animation: animate-pulse 2.5s linear infinite;
+            .video_play {
+               border: 1px solid rgba(255, 255, 255, 0.4);
+               display: inline-flex;
+               align-items: center;
+               justify-content: center;
+               width: 70px;
+               height: 70px;
+               line-height: 1;
+               font-size: 20px;
+               color: var(--tj-color-common-white);
+               border-radius: 50%;
+               position: relative;
+               z-index: 1;
+               &::before {
+                  content: "";
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  width: 60px;
+                  height: 60px;
+                  transform: translate(-50%, -50%);
+                  border: 1px solid rgba(255, 255, 255, 0.3);
+                  z-index: -1;
+                  border-radius: 50%;
+               }
+               &::after {
+                  content: "";
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  width: 50px;
+                  height: 50px;
+                  transform: translate(-50%, -50%);
+                  border: 1px solid rgba(255, 255, 255, 0.2);
+                  z-index: -1;
+                  border-radius: 50%;
+               }
+            }
+         }
+      }
+      .shaes-1 {
+         position: absolute;
+         right: -40px;
+         bottom: 30px;
+         z-index: -1;
+         max-width: 200px;
+         width: 100%;
+      }
+      .shaes-2 {
+         position: absolute;
+         top: -35%;
+         left: 0;
+         max-width: 200px;
+         width: 100%;
+         z-index: 1;
+      }
+      @media #{$lg} {
+         .shaes-1 {
+            max-width: 150px;
+         }
+         .shaes-2 {
+            max-width: 150px;
+         }
+      }
+      @media #{$md, $sm, $xs} {
+         margin-bottom: 50px;
+         .shaes-1 {
+            max-width: 150px;
+            right: 0;
+         }
+         .shaes-2 {
+            max-width: 150px;
+         }
+      }
+      @media #{$xs} {
+         max-width: 350px;
+         .images-one {
+            max-width: 210px;
+         }
+         .images-two {
+            max-width: 200px;
+            .video_icon {
+               left: 20px;
+            }
+         }
+         .shaes-1 {
+            max-width: 120px;
+         }
+         .shaes-2 {
+            top: -45%;
+            max-width: 120px;
+         }
+      }
+   }
+}
+
+.about-content {
+   &.style-9 {
+      .desc {
+         p {
+            margin-bottom: 25px;
+            font-style: italic;
+            font-weight: var(--tj-fw-medium);
+            line-height: 1.8;
+            &:last-child {
+               margin-bottom: 0;
+               font-style: normal;
+            }
+         }
+      }
+      .about-button {
+         margin-top: 30px;
+      }
+   }
+}
+/* !END: Theme About CSS */

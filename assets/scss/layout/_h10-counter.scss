@@ -1,0 +1,77 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Counter CSS
+----------------------------------------*/
+.tj-counter-section {
+   &.style-10 {
+      background: linear-gradient(180deg, var(--tj-color-theme-h8-primary) 0%, var(--tj-color-theme-h8-primary-1) 100%);
+      padding: 60px 0;
+      @media #{$md, $sm, $xs} {
+         padding: 60px 0 30px;
+      }
+   }
+}
+
+.counter-content-area {
+   &.style-10 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+      z-index: 9;
+
+      @media #{$md, $sm} {
+         grid-template-columns: repeat(2, 1fr);
+         text-align: center;
+      }
+      @media #{$xs} {
+         grid-template-columns: repeat(1, 1fr);
+         text-align: center;
+      }
+      .counter-item {
+         border-right: 1.5px solid rgba(161, 172, 179, 0.2);
+         position: relative;
+         z-index: 9;
+         padding-bottom: 14px;
+         padding-left: 50px;
+         &:first-child {
+            padding-left: 0;
+         }
+         @media #{$md, $sm, $xs} {
+            border-right: none;
+            padding-left: 0;
+            margin-bottom: 30px;
+         }
+         &:last-child {
+            border-right: none;
+         }
+         .tj-count {
+            font-size: 80px;
+            font-family: var(--tj-ff-heading);
+            font-weight: var(--tj-fw-bold);
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 1px rgba(95, 57, 255, 0.4);
+            line-height: 1;
+            @media #{$lg, $md, $sm} {
+               font-size: 55px;
+            }
+            @media #{$xs} {
+               font-size: 50px;
+            }
+         }
+         .sub-title {
+            font-size: 22px;
+            color: var(--tj-color-theme-primary);
+            font-weight: var(--tj-fw-bold);
+            @media #{$xl} {
+               font-size: 20px;
+            }
+            @media #{$lg, $md, $sm, $xs} {
+               font-size: 16px;
+            }
+         }
+      }
+   }
+}
+
+/* !END: Theme Counter CSS */

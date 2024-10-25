@@ -1,0 +1,15 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Team CSS
+----------------------------------------*/
+.tj-team-item {
+   &.style-10 {
+      .tj-team-content {
+         &::before {
+            background: rgba(95, 57, 255, 0.6);
+         }
+      }
+   }
+}
+/* !END: Theme Team CSS */

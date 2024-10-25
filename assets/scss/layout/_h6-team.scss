@@ -1,0 +1,225 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Home 6 Team CSS
+----------------------------------------*/
+.tj-team-section {
+   &.style-6 {
+      background: var(--tj-color-theme-h6-bg);
+      padding-top: 120px;
+      padding-bottom: 90px;
+      position: relative;
+      z-index: 1;
+      &::after {
+         content: "";
+         position: absolute;
+         left: 0;
+         bottom: 100px;
+         width: 100%;
+         height: 550px;
+         background-image: url(../images/shape/h6-about-bg-shape.svg);
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+      }
+
+      .tj-sec-heading {
+         max-width: 100%;
+         margin-bottom: 60px;
+      }
+      @media #{$xl, $lg} {
+         &::after {
+            background-size: contain;
+            bottom: 80px;
+         }
+      }
+      @media #{$md} {
+         padding-top: 100px;
+         padding-bottom: 70px;
+
+         &::after {
+            background-size: contain;
+            bottom: 60px;
+         }
+      }
+      @media #{$xs, $sm,} {
+         padding-top: 80px;
+         padding-bottom: 50px;
+
+         &::after {
+            background-size: contain;
+            bottom: 60px;
+         }
+
+         .tj-sec-heading {
+            margin-bottom: 40px;
+         }
+      }
+   }
+}
+.tj_team_item {
+   &.style-6 {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 30px;
+      overflow: hidden;
+
+      &::after {
+         content: "";
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 41.87%, rgba(30, 30, 30, 0.7) 100%);
+         mix-blend-mode: color;
+         z-index: 1;
+         @include transition(0.4s);
+      }
+
+      .team_img {
+         img {
+            width: 100%;
+         }
+      }
+      .team_content {
+         background-color: var(--tj-color-theme-h6-primary);
+         padding: 20px;
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 85%;
+         z-index: 2;
+         visibility: hidden;
+         opacity: 0;
+         @include transition(0.4s);
+
+         .designation {
+            display: block;
+            font-size: 16px;
+            line-height: 1;
+            color: var(--tj-color-grey-10);
+            margin-bottom: 7px;
+         }
+         .name {
+            margin: 0;
+            color: var(--tj-color-common-white);
+
+            a {
+               &:hover {
+                  color: var(--tj-color-common-black);
+               }
+            }
+         }
+      }
+
+      .team_socials {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         background-color: var(--tj-color-grey-10);
+         position: absolute;
+         right: 20px;
+         top: 0;
+         z-index: 3;
+         padding: 13px 15px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 15px;
+         transform: translateY(-50%);
+         opacity: 0;
+         visibility: hidden;
+         transition: all 0.4s ease-in-out 0s;
+         li {
+            position: relative;
+            z-index: 1;
+
+            a {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               width: 24px;
+               height: 24px;
+               font-size: 16px;
+               line-height: 1;
+
+               i {
+                  display: inline-flex;
+                  line-height: 1;
+               }
+
+               &:hover {
+                  i {
+                     color: var(--tj-color-theme-h6-primary);
+                  }
+               }
+            }
+            &:not(:last-child) {
+               &::after {
+                  content: "";
+                  position: absolute;
+                  left: 50%;
+                  bottom: -8px;
+                  transform: translateX(-50%);
+                  width: 80%;
+                  height: 1px;
+                  background-color: var(--tj-color-grey-9);
+               }
+            }
+         }
+      }
+
+      &:hover {
+         &::after {
+            background: linear-gradient(18.02deg, var(--tj-color-theme-h6-primary) 1%, rgba(255, 51, 68, 0) 71.93%);
+         }
+         .team_content {
+            bottom: 40px;
+            visibility: visible;
+            opacity: 1;
+         }
+         .team_socials {
+            transform: translateX(0);
+            visibility: visible;
+            opacity: 1;
+         }
+
+         @media #{$md, $xs} {
+            .team_content {
+               bottom: 25px;
+            }
+         }
+         @media #{$sm} {
+            .team_content {
+               bottom: 30px;
+            }
+         }
+      }
+      @media #{$md, $xs} {
+         .team_content {
+            width: 90%;
+         }
+      }
+      @media #{$sm} {
+         max-width: 350px;
+         width: 100%;
+         margin-left: auto;
+         margin-right: auto;
+
+         .team_content {
+            width: 90%;
+         }
+      }
+      @media #{$xs} {
+         .team_content {
+            padding: 20px 15px;
+         }
+         .team_socials {
+            right: 15px;
+         }
+      }
+   }
+}
+/* !END: Home 6 Team CSS */

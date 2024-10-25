@@ -1,0 +1,164 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Skills CSS
+----------------------------------------*/
+.tj-skills-section {
+   padding-top: 120px;
+   padding-bottom: 120px;
+
+   // style-5
+   &.style-5 {
+      .tj-sec-heading {
+         max-width: 470px;
+         width: 100%;
+         margin-left: auto;
+         margin-right: auto;
+         margin-bottom: 60px;
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 80px;
+         .tj-sec-heading {
+            margin-bottom: 40px;
+         }
+      }
+   }
+
+   &.style-6 {
+      .tj-sec-heading {
+         max-width: 470px;
+         width: 100%;
+         margin-left: auto;
+         margin-right: auto;
+         margin-bottom: 60px;
+      }
+   }
+   @media #{$md} {
+      padding-top: 100px;
+      padding-bottom: 100px;
+   }
+   @media #{$xs,$sm} {
+      padding-top: 80px;
+      padding-bottom: 80px;
+
+      .tj-sec-heading {
+         margin-bottom: 40px;
+      }
+   }
+}
+
+.skill_items_wrap {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 25px;
+   flex-wrap: wrap;
+}
+
+.skill_item {
+   max-width: 195px;
+   width: 100%;
+   background-color: var(--tj-color-common-white);
+   position: relative;
+   z-index: 1;
+   padding: 30px 10px;
+   &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border: 1px solid var(--tj-color-theme-h6-primary);
+      opacity: 0.2;
+      @include transition(all 0.3s ease-in-out 0s);
+   }
+   .skill_item_inner {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+
+      .skill_img {
+         width: 105px;
+         height: 105px;
+         border-radius: 50%;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         background-color: var(--tj-color-grey-10);
+         margin-bottom: 20px;
+         font-size: 50px;
+         line-height: 1;
+         svg,
+         img {
+            max-width: 60px;
+         }
+         i {
+            display: inline-flex;
+            line-height: 1;
+         }
+      }
+      .skill_content {
+         .title {
+            font-size: 20px;
+            line-height: 1;
+            text-transform: uppercase;
+            color: var(--tj-color-common-black);
+            margin: 0;
+         }
+      }
+   }
+   &:hover {
+      &::after {
+         opacity: 1;
+      }
+
+      .skill_item_inner {
+         .skill_img {
+            i,
+            svg,
+            img {
+               transform: rotate(360deg);
+            }
+         }
+      }
+   }
+   @media #{$xs} {
+      max-width: 160px;
+      padding: 20px 10px;
+
+      .skill_item_inner {
+         .skill_img {
+            width: 90px;
+            height: 90px;
+            font-size: 45px;
+            margin-bottom: 15px;
+
+            svg,
+            img {
+               max-width: 50px;
+            }
+         }
+         .skill_content {
+            .title {
+               font-size: 18px;
+            }
+         }
+      }
+   }
+   &.style-5 {
+      background: linear-gradient(90deg, var(--tj-color-theme-h5-secondary) 0%, var(--tj-color-theme-h5-primary) 100%);
+      padding: 1px;
+      border-radius: 0 0 200px 200px;
+      &::after {
+         display: none;
+      }
+      .skill_item_inner {
+         background: var(--tj-color-common-white);
+         border-radius: 0 0 200px 200px;
+         padding: 30px 15px 50px;
+      }
+   }
+}
+/* !END: Skills CSS */

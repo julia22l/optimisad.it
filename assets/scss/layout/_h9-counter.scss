@@ -1,0 +1,91 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Counter CSS
+----------------------------------------*/
+.tj-counter-section {
+   &.style-9 {
+      padding-top: 120px;
+      padding-bottom: 90px;
+      background: var(--tj-color-theme-h9-primary-1);
+      .shapes-1 {
+         position: absolute;
+         bottom: 40px;
+         left: 20%;
+         max-width: 30px;
+         width: 100%;
+         opacity: 0.4;
+      }
+      .shapes-2 {
+         position: absolute;
+         top: 50px;
+         right: 15%;
+         max-width: 30px;
+         width: 100%;
+         opacity: 0.4;
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 50px;
+      }
+   }
+}
+
+.counter-item {
+   &.style-9 {
+      background: var(--tj-color-theme-h9-primary-3);
+      display: flex;
+      gap: 30px;
+      padding: 30px 20px 30px 30px;
+      margin-bottom: 30px;
+      max-width: 310px;
+      width: 100%;
+      .counter-icon {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         width: 90px;
+         height: 90px;
+         line-height: 1;
+         font-size: 45px;
+         color: var(--tj-color-grey-11);
+         background: var(--tj-color-theme-h9-primary-2);
+         border-radius: 20px 20px 0px 20px;
+      }
+      .tj-count {
+         font-size: 50px;
+         font-weight: var(--tj-fw-bold);
+         font-style: italic;
+         color: var(--tj-color-theme-h9-primary);
+         -webkit-text-fill-color: initial;
+         -webkit-text-stroke: initial;
+         line-height: 1;
+         letter-spacing: 4px;
+      }
+      .sub-title {
+         font-size: 18px;
+         font-family: var(--tj-ff-heading);
+         font-weight: var(--tj-fw-medium);
+         color: var(--tj-color-grey-11);
+      }
+      @media #{$xl, $lg, $md, $sm, $xs} {
+         gap: 20px;
+         .counter-icon {
+            width: 65px;
+            height: 65px;
+            font-size: 35px;
+         }
+         .tj-count {
+            font-size: 40px;
+         }
+      }
+      @media #{$lg, $md, $sm, $xs} {
+         padding: 30px 15px;
+      }
+      @media #{$xs} {
+         margin: 0 auto 30px;
+      }
+   }
+}
+
+/* !END: Theme Counter CSS */

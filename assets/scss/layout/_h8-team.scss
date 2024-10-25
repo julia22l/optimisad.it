@@ -1,0 +1,123 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Team CSS
+----------------------------------------*/
+.tj-team-section {
+   &.style-8 {
+      padding-top: 120px;
+      padding-bottom: 90px;
+      background: var(--tj-color-common-white);
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 50px;
+         .tj-sec-heading {
+            margin-bottom: 40px;
+         }
+      }
+   }
+}
+
+.tj-team-item-two {
+   &.style-8 {
+      &::before {
+         background: linear-gradient(
+            223.74deg,
+            rgba(169, 169, 250, 0.3) 0%,
+            var(--tj-color-theme-h8-primary-1) 84.48%,
+            var(--tj-color-theme-h8-primary-1) 84.48%
+         );
+      }
+      .tj-team-content {
+         .team-header {
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(all 0.4s ease-in-out 0s);
+            .title-link {
+               a {
+                  color: var(--tj-color-common-black);
+                  &:hover {
+                     color: var(--tj-color-theme-primary);
+                  }
+               }
+            }
+            .sub-title {
+               color: var(--tj-color-text-body);
+            }
+         }
+         .team_socials {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: var(--tj-color-grey-10);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 3;
+            padding: 17px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease-in-out 0s;
+            border-radius: 0px 0px 10px 10px;
+            li {
+               position: relative;
+               z-index: 1;
+               a {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 24px;
+                  height: 24px;
+                  font-size: 16px;
+                  line-height: 1;
+                  i {
+                     display: inline-flex;
+                     line-height: 1;
+                  }
+                  &:hover {
+                     i {
+                        color: var(--tj-color-theme-primary);
+                     }
+                  }
+               }
+               &:not(:last-child) {
+                  &::after {
+                     content: "";
+                     position: absolute;
+                     left: 50%;
+                     bottom: -8px;
+                     transform: translateX(-50%);
+                     width: 80%;
+                     height: 1px;
+                     background-color: var(--tj-color-grey-9);
+                  }
+               }
+            }
+         }
+      }
+      &:hover {
+         &::before {
+            opacity: 1;
+            visibility: visible;
+         }
+         .team-header {
+            bottom: 30px;
+            opacity: 1;
+            visibility: visible;
+         }
+         .team_socials {
+            left: 30px;
+            opacity: 1;
+            visibility: visible;
+         }
+      }
+   }
+}
+/* !END: Theme Team CSS */

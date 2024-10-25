@@ -1,0 +1,146 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Blog CSS
+----------------------------------------*/
+.tj-blog-section {
+   &.style-8 {
+      padding-top: 120px;
+      padding-bottom: 70px;
+      background: var(--tj-color-common-white);
+      .tj-sec-heading {
+         max-width: 100%;
+         margin-bottom: 60px;
+         display: flex;
+         align-items: end;
+         justify-content: space-between;
+         gap: 15px;
+         .header-content {
+            max-width: 470px;
+            width: 100%;
+            .title {
+               margin-bottom: 0;
+            }
+         }
+         .desc {
+            max-width: 570px;
+            width: 100%;
+            line-height: 1.9;
+            p {
+               &:last-child {
+                  margin-bottom: 0;
+               }
+            }
+         }
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 30px;
+         .tj-sec-heading {
+            margin-bottom: 40px;
+            flex-direction: column;
+            align-items: start;
+         }
+      }
+   }
+}
+
+.tj-blog-item {
+   &.style-8 {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 50px;
+      transition: 0.4s;
+      overflow: hidden;
+      .blog-image {
+         margin-bottom: 20px;
+         border-radius: 15px;
+         position: relative;
+         z-index: 1;
+         &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            opacity: 1;
+            visibility: visible;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 41.87%, rgba(30, 30, 30, 0.7) 100%);
+         }
+         &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            border-radius: 15px;
+            opacity: 0;
+            visibility: hidden;
+            background: linear-gradient(0deg, var(--tj-color-theme-primary) -3.66%, rgba(255, 255, 255, 0) 66.72%);
+         }
+         a {
+            display: inline-block;
+            img {
+               border-radius: 15px;
+            }
+         }
+      }
+      .blog-content-area {
+         padding-left: 15px;
+         .title-link {
+            margin-bottom: 20px;
+            position: relative;
+            &::before {
+               display: none;
+            }
+            a {
+               color: var(--tj-color-common-black);
+               background: transparent;
+               line-height: 1.6;
+               &:hover {
+                  color: var(--tj-color-theme-primary);
+               }
+            }
+         }
+         p {
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
+         .blog-meta {
+            span {
+               a {
+                  &:hover {
+                     color: var(--tj-color-theme-h6-primary);
+                  }
+               }
+            }
+         }
+         .tj-blog-button {
+            .tj-black-btn {
+               &::before {
+                  display: none;
+               }
+               &:hover {
+                  background-color: var(--tj-color-theme-h6-primary);
+               }
+            }
+         }
+      }
+      &:hover {
+         .blog-image {
+            &::before {
+               opacity: 0;
+               visibility: hidden;
+            }
+            &::after {
+               opacity: 1;
+               visibility: visible;
+            }
+         }
+      }
+   }
+}
+/* !END: Theme Blog CSS */
