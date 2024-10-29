@@ -1,0 +1,339 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Heading CSS
+----------------------------------------*/
+.tj-sec-heading {
+   margin-bottom: 60px;
+   margin-left: auto;
+   margin-right: auto;
+   position: relative;
+   z-index: 3;
+   @media #{$md, $sm, $xs} {
+      margin-bottom: 35px;
+   }
+   .sub-title {
+      background: linear-gradient(90deg, var(--tj-color-theme-secondary) 0%, var(--tj-color-theme-primary) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 35px;
+      font-family: var(--tj-ff-heading2);
+      letter-spacing: 3.5px;
+      font-weight: var(--tj-fw-regular);
+      display: inline-block;
+      margin-bottom: 10px;
+      line-height: 1.2;
+      &.secondary-color {
+         color: var(--tj-color-theme-secondary);
+      }
+      @media #{$md, $sm, $xs} {
+         font-size: 30px;
+      }
+   }
+   .white-sub-title {
+      color: var(--tj-color-common-white);
+      font-size: 35px;
+      font-family: var(--tj-ff-heading2);
+      letter-spacing: 3.5px;
+      font-weight: var(--tj-fw-regular);
+      margin-bottom: 20px;
+      line-height: 1.2;
+      display: inline-block;
+      @media #{$md, $sm, $xs} {
+         font-size: 30px;
+      }
+   }
+   .active-color {
+      background: linear-gradient(90deg, var(--tj-color-theme-secondary) 0%, var(--tj-color-theme-primary) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+   }
+   .sec-title {
+      margin-bottom: 30px;
+      @media #{$md} {
+         font-size: 40px;
+         margin-bottom: 15px;
+      }
+      @media #{$sm, $xs} {
+         font-size: 32px;
+         margin-bottom: 15px;
+      }
+   }
+   .black-color {
+      color: var(--tj-color-common-black);
+   }
+   p {
+      margin-bottom: 0;
+   }
+   &.style-5 {
+      .sub-title {
+         background: linear-gradient(90deg, var(--tj-color-theme-h5-secondary) 0%, var(--tj-color-theme-h5-primary) 100%);
+         background-clip: text;
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+      }
+      .sec-title {
+         line-height: 1.2;
+         span {
+            background: linear-gradient(90deg, var(--tj-color-theme-h5-secondary) 0%, var(--tj-color-theme-h5-primary) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+      }
+   }
+
+   // style 6 (home 6)
+   &.style-6,
+   &.style-7 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 0;
+
+      .shadow_text {
+         display: inline-block;
+         font-size: 80px;
+         line-height: 1;
+         font-family: var(--tj-ff-heading);
+         font-weight: 700;
+         background: linear-gradient(180deg, var(--tj-color-theme-h6-primary) 15.38%, var(--tj-color-common-white) 90%);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         opacity: 0.1;
+
+         position: absolute;
+         left: 0;
+         top: 0;
+         z-index: -1;
+      }
+      .subtitle {
+         display: block;
+         font-size: 35px;
+         line-height: 1;
+         font-family: var(--tj-ff-heading2);
+         letter-spacing: 0.1em;
+         color: var(--tj-color-theme-h6-primary);
+         text-transform: capitalize;
+         margin-bottom: 10px;
+      }
+      .title {
+         line-height: 1.1;
+         margin: 0;
+      }
+
+      .tj_sec_left {
+         max-width: 500px;
+         width: 100%;
+      }
+      .desc {
+         max-width: 570px;
+         width: 100%;
+
+         p {
+            margin-bottom: 15px;
+
+            &:last-child {
+               margin: 0;
+            }
+         }
+      }
+
+      @media #{$md} {
+         .shadow_text {
+            font-size: 70px;
+         }
+         .subtitle {
+            font-size: 30px;
+         }
+         .title {
+            font-size: 45px;
+         }
+      }
+      @media #{$sm} {
+         .shadow_text {
+            font-size: 60px;
+         }
+         .subtitle {
+            font-size: 30px;
+         }
+         .title {
+            font-size: 40px;
+         }
+      }
+      @media #{$xs} {
+         .shadow_text {
+            font-size: 50px;
+         }
+         .subtitle {
+            font-size: 25px;
+         }
+         .title {
+            font-size: 35px;
+         }
+      }
+   }
+   // style 7 (home 7)
+   &.style-7 {
+      max-width: 100%;
+      gap: 0;
+
+      .subtitle,
+      .title,
+      .desc {
+         max-width: 100%;
+         width: 100%;
+      }
+      .desc {
+         margin-top: 20px;
+      }
+      .btn {
+         margin-top: 30px;
+         background-color: var(--tj-color-theme-h6-primary);
+
+         &::before {
+            display: none;
+         }
+
+         &:hover {
+            background-color: var(--tj-color-common-white);
+            color: var(--tj-color-theme-h6-primary);
+         }
+      }
+
+      &.text-center {
+         .shadow_text {
+            right: 0;
+         }
+      }
+      &.text-end {
+         .shadow_text {
+            left: auto;
+            right: 0;
+         }
+      }
+   }
+   // style 8 (home 8)
+   &.style-8 {
+      .sub-title {
+         color: var(--tj-color-common-black);
+         background: transparent;
+         background-clip: initial;
+         -webkit-text-fill-color: initial;
+      }
+      .title {
+         color: var(--tj-color-common-black);
+         background: transparent;
+         background-clip: initial;
+         -webkit-text-fill-color: initial;
+         span {
+            color: var(--tj-color-theme-primary);
+         }
+      }
+      @media #{$md} {
+         .title {
+            font-size: 40px;
+         }
+      }
+      @media #{$sm, $xs} {
+         .title {
+            font-size: 32px;
+         }
+      }
+   }
+   // style 9 (home 9)
+   &.style-9 {
+      .sub-title {
+         display: inline-block;
+         color: var(--tj-color-grey-11);
+         position: relative;
+         z-index: 1;
+         padding-left: 50px;
+         background: transparent;
+         background-clip: initial;
+         -webkit-background-clip: initial;
+         -webkit-text-fill-color: initial;
+         &::before {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: var(--tj-color-theme-h9-primary);
+            border-radius: 50%;
+         }
+      }
+      .title {
+         color: var(--tj-color-heading-primary9);
+         line-height: 1.1;
+         background: transparent;
+         background-clip: initial;
+         -webkit-background-clip: initial;
+         -webkit-text-fill-color: initial;
+         margin-bottom: 0;
+         span {
+            color: var(--tj-color-theme-h9-primary);
+            font-size: 40px;
+            font-weight: var(--tj-fw-light);
+            font-style: italic;
+         }
+      }
+      @media #{$md} {
+         .title {
+            font-size: 40px;
+            span {
+               font-size: 35px;
+            }
+         }
+      }
+      @media #{$sm, $xs} {
+         .title {
+            font-size: 32px;
+            span {
+               font-size: 30px;
+            }
+         }
+      }
+   }
+   &.style-10 {
+      .sub-title {
+         background: transparent;
+         background-clip: initial;
+         -webkit-background-clip: initial;
+         -webkit-text-fill-color: initial;
+         color: var(--tj-color-light-3);
+      }
+      .hero-title {
+         color: var(--tj-color-common-black);
+         .title {
+            background: transparent;
+            background-clip: initial;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            color: var(--tj-color-light-3);
+         }
+      }
+   }
+}
+
+.secondary-color {
+   font-size: 35px;
+   font-family: var(--tj-ff-heading2);
+   letter-spacing: 3.5px;
+   font-weight: var(--tj-fw-regular);
+   display: inline-block;
+   margin-bottom: 10px;
+   line-height: 1.2;
+   color: var(--tj-color-theme-primary);
+   @media #{$md, $sm, $xs} {
+      font-size: 30px;
+   }
+}
+
+/* !END: Theme Heading CSS */

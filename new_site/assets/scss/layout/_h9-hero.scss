@@ -1,0 +1,384 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Home 8 Hero CSS
+----------------------------------------*/
+.tj-hero-section {
+   &.style-9 {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      background: linear-gradient(0deg, rgba(255, 204, 25, 0.05) 0%, rgba(255, 255, 255, 0) 53.01%);
+      position: relative;
+      z-index: 2;
+      &::before {
+         position: absolute;
+         content: "";
+         width: 100%;
+         height: 100%;
+         left: 0;
+         top: 0;
+         background-image: url(../images/shape/hero-9.svg);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         z-index: -1;
+      }
+      .tj-sec-heading {
+         margin-bottom: 0;
+         .title {
+            margin-bottom: 35px;
+            span {
+               font-size: 60px;
+               font-style: normal;
+            }
+         }
+         @media #{$xl} {
+            .title {
+               font-size: 65px;
+               span {
+                  font-size: 55px;
+               }
+            }
+         }
+         @media #{$lg} {
+            .title {
+               font-size: 60px;
+               span {
+                  font-size: 50px;
+               }
+            }
+         }
+         @media #{$md} {
+            .title {
+               font-size: 50px;
+               span {
+                  font-size: 45px;
+               }
+            }
+         }
+         @media #{$sm} {
+            .title {
+               font-size: 45px;
+               span {
+                  font-size: 40px;
+               }
+            }
+         }
+         @media #{$xs} {
+            .sub-title {
+               padding-left: 35px;
+            }
+            .title {
+               font-size: 38px;
+               margin-bottom: 25px;
+               span {
+                  font-size: 35px;
+               }
+            }
+         }
+      }
+      .hero-icon-1 {
+         position: absolute;
+         top: 40%;
+         left: 10%;
+         z-index: -1;
+         max-width: 65px;
+         width: 100%;
+         img {
+            width: 100%;
+         }
+         @media #{$md, $sm} {
+            top: 45%;
+            max-width: 40px;
+         }
+         @media #{$xs} {
+            display: none;
+         }
+      }
+      .hero-icon-2 {
+         position: absolute;
+         top: 20%;
+         right: 10%;
+         z-index: -1;
+         max-width: 35px;
+         width: 100%;
+         img {
+            width: 100%;
+         }
+         @media #{$md, $sm} {
+            right: 4%;
+         }
+         @media #{$xs} {
+            display: none;
+         }
+      }
+      .hero-icon-3 {
+         position: absolute;
+         bottom: 12%;
+         left: 15%;
+         z-index: -1;
+         max-width: 35px;
+         width: 100%;
+         img {
+            width: 100%;
+         }
+         @media #{$md, $sm} {
+            left: 10%;
+         }
+         @media #{$xs} {
+            display: none;
+         }
+      }
+      .hero-icon-4 {
+         position: absolute;
+         top: 40%;
+         right: 10%;
+         z-index: -1;
+         max-width: 65px;
+         width: 100%;
+         img {
+            width: 100%;
+         }
+         @media #{$md, $sm} {
+            top: 45%;
+            max-width: 40px;
+         }
+         @media #{$xs} {
+            display: none;
+         }
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 80px;
+      }
+   }
+}
+
+.hero-left-content {
+   &.style-9 {
+      text-align: center;
+      max-width: 830px;
+      width: 100%;
+      margin: 0 auto;
+      .desc {
+         p {
+            font-size: 16px;
+            font-weight: var(--tj-fw-medium);
+            color: var(--tj-color-text-body9);
+            max-width: 100%;
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
+      }
+      @media #{$md, $sm, $xs} {
+         .hero-button {
+            margin-top: 30px;
+         }
+      }
+   }
+}
+
+.hero-wrapper-9 {
+   display: flex;
+   align-items: end;
+   gap: 30px;
+   max-width: 1623px;
+   margin: 0 auto;
+   width: 100%;
+   .images-item {
+      position: relative;
+      z-index: 1;
+      .hero9-images {
+         position: relative;
+         z-index: 2;
+         &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: var(--tj-color-theme-h9-primary);
+            z-index: -1;
+         }
+         img {
+            width: 100%;
+         }
+      }
+      &:nth-child(1) {
+         bottom: 110px;
+         .hero9-images {
+            max-width: 287px;
+            padding-left: 10px;
+            &::before {
+               top: 10px;
+            }
+         }
+      }
+      &:nth-child(2) {
+         .hero-shaes {
+            margin-bottom: 50px;
+         }
+         .hero9-images {
+            max-width: 250px;
+            padding-left: 10px;
+            &::before {
+               top: -10px;
+            }
+         }
+      }
+      &:nth-child(3) {
+         .hero9-images {
+            max-width: 153px;
+            padding-right: 10px;
+            bottom: 30px;
+            &::before {
+               top: 10px;
+            }
+         }
+      }
+      &:nth-child(4) {
+         .hero9-images {
+            max-width: 240px;
+         }
+      }
+      &:nth-child(5) {
+         .hero9-images {
+            max-width: 240px;
+         }
+         .hero-shaes {
+            margin-top: 60px;
+         }
+      }
+      &:nth-child(6) {
+         bottom: 45px;
+         .hero9-images {
+            max-width: 303px;
+            bottom: 40px;
+            padding-right: 10px;
+            &::before {
+               top: -10px;
+            }
+         }
+      }
+   }
+   @media #{$md} {
+      gap: 15px;
+   }
+   @media #{$sm} {
+      gap: 10px;
+      padding-top: 30px;
+      .images-item {
+         .hero9-images {
+            &:nth-child(1) {
+               padding-left: 5px;
+               &::before {
+                  top: 5px;
+               }
+            }
+         }
+         &:nth-child(2) {
+            .hero9-images {
+               padding-left: 5px;
+               &::before {
+                  top: -5px;
+               }
+            }
+         }
+         &:nth-child(3) {
+            .hero9-images {
+               padding-right: 5px;
+               &::before {
+                  top: 5px;
+                  left: 5px;
+                  width: 90%;
+               }
+            }
+         }
+         &:nth-child(4) {
+            .hero9-images {
+               padding-left: 0;
+               &::before {
+                  display: none;
+               }
+            }
+         }
+         &:nth-child(5) {
+            .hero9-images {
+               padding-left: 0;
+               &::before {
+                  display: none;
+               }
+            }
+         }
+         &:nth-child(6) {
+            .hero9-images {
+               &::before {
+                  width: 90%;
+                  left: 5px;
+                  top: -5px;
+               }
+            }
+         }
+      }
+   }
+   @media #{$xs} {
+      gap: 10px;
+      padding-top: 30px;
+      .images-item {
+         .hero9-images {
+            &:nth-child(1) {
+               padding-left: 5px;
+               &::before {
+                  top: 5px;
+               }
+            }
+         }
+         &:nth-child(2) {
+            .hero9-images {
+               padding-left: 5px;
+               &::before {
+                  top: -5px;
+               }
+            }
+         }
+         &:nth-child(3) {
+            .hero9-images {
+               padding-right: 5px;
+               &::before {
+                  top: 5px;
+                  left: 5px;
+                  width: 85%;
+               }
+            }
+         }
+         &:nth-child(4) {
+            .hero9-images {
+               padding-left: 0;
+               &::before {
+                  display: none;
+               }
+            }
+         }
+         &:nth-child(5) {
+            .hero9-images {
+               padding-left: 0;
+               &::before {
+                  display: none;
+               }
+            }
+         }
+         &:nth-child(6) {
+            .hero9-images {
+               &::before {
+                  width: 85%;
+                  left: 5px;
+                  top: -5px;
+               }
+            }
+         }
+      }
+   }
+}
+/* !END: Home 8 Hero CSS */

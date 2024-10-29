@@ -1,0 +1,32 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme FAQ CSS
+----------------------------------------*/
+.tj-faq-area {
+   &.style-10 {
+      .tj-faq-style {
+         border: 1px solid var(--tj-color-theme-primary);
+         .accordion-item {
+            .accordion-header {
+               .accordion-button {
+                  background: transparent;
+                  background-clip: initial;
+                  -webkit-background-clip: initial;
+                  color: var(--tj-color-light-3);
+                  &::before {
+                     background: var(--tj-color-light-3);
+                  }
+                  &.collapsed {
+                     color: var(--tj-color-common-black);
+                     &:before {
+                        background: var(--tj-color-common-black);
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+/* !END: Theme FAQ CSS */

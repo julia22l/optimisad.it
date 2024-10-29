@@ -1,0 +1,71 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Testimonial CSS
+----------------------------------------*/
+.tj-testimonial-section {
+   &.style-10 {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      .swiper-pagination {
+         .swiper-pagination-bullet {
+            top: -9px;
+         }
+         .swiper-pagination-bullet-active {
+            background: var(--tj-color-theme-primary);
+         }
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 80px;
+         .testimonial-top-area {
+            .testimonial-right-content {
+               margin-top: 0px;
+            }
+         }
+      }
+   }
+}
+
+.testimonial-item {
+   &.style-10 {
+      .testimonial-top-content {
+         .testimonial-left-content {
+            .auother-text {
+               .title {
+                  background: transparent;
+                  background-clip: initial;
+                  -webkit-background-clip: initial;
+                  -webkit-text-fill-color: initial;
+                  color: var(--tj-color-common-black);
+               }
+            }
+         }
+      }
+      .test-title {
+         background: transparent;
+         background-clip: initial;
+         -webkit-background-clip: initial;
+         -webkit-text-fill-color: initial;
+         color: var(--tj-color-common-black);
+      }
+      &:hover {
+         .testimonial-top-content {
+            .testimonial-left-content {
+               &::before {
+                  background: var(--tj-color-theme-primary);
+               }
+               .auother-text {
+                  .title {
+                     color: var(--tj-color-theme-primary);
+                  }
+               }
+            }
+         }
+         .test-title {
+            color: var(--tj-color-light-3);
+         }
+      }
+   }
+}
+/* !END: Theme Testimonial CSS */

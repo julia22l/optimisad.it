@@ -1,0 +1,146 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Home 6 Video CSS
+----------------------------------------*/
+.tj-video-section {
+   &.style-9 {
+      position: relative;
+      z-index: 1;
+      &::after {
+         content: "";
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background: linear-gradient(354.08deg, var(--tj-color-theme-h9-primary-4) 3.26%, var(--tj-color-theme-h9-primary-5) 93.86%);
+         opacity: 0.3;
+         z-index: -1;
+         mix-blend-mode: multiply;
+      }
+
+      @media #{$xs,$sm} {
+         padding-top: 100px;
+         padding-bottom: 100px;
+      }
+      .video_content_wrap {
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+         gap: 35px;
+         justify-content: center;
+
+         .video_icon {
+            position: relative;
+            display: inline-block;
+            width: 135px;
+            height: 135px;
+            z-index: 1;
+            border-radius: 50%;
+            animation: animate-pulse 2.5s linear infinite;
+            &::after {
+               content: "";
+               position: absolute;
+               left: 50%;
+               top: 50%;
+               width: 120%;
+               height: 120%;
+               transform: translate(-50%, -50%);
+               background-color: var(--tj-color-theme-h8-primary-4);
+               opacity: 0.2;
+               z-index: -1;
+               border-radius: 50%;
+            }
+            .video_play {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               font-size: 30px;
+               line-height: 1;
+               color: var(--tj-color-common-white);
+               width: 100%;
+               height: 100%;
+               border-radius: 50%;
+               position: relative;
+               z-index: 1;
+               background: rgba(58, 58, 58, 0.3);
+               &::after,
+               &::before {
+                  content: "";
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: 1;
+                  border: 1.5px solid rgba(255, 255, 255, 0.2);
+                  border-radius: 50%;
+               }
+               &::after {
+                  width: 75%;
+                  height: 75%;
+                  opacity: 0.5;
+               }
+
+               i {
+                  display: inline-flex;
+                  line-height: 1;
+               }
+            }
+         }
+         .video_text {
+            font-size: 70px;
+            font-weight: var(--tj-fw-bold);
+            line-height: 1;
+            background: linear-gradient(180deg, var(--tj-color-common-white) 29.41%, rgba(255, 255, 255, 0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+         @media #{$md, $sm} {
+            flex-direction: column;
+            gap: 30px;
+
+            .video_icon {
+               width: 100px;
+               height: 100px;
+            }
+            .video_text {
+               font-size: 50px;
+            }
+         }
+         @media #{$xs} {
+            flex-direction: column;
+            gap: 20px;
+
+            .video_icon {
+               width: 90px;
+               height: 90px;
+               .video-play {
+                  font-size: 25px;
+               }
+            }
+            .video_text {
+               font-size: 40px;
+            }
+         }
+      }
+   }
+}
+
+@keyframes animate-pulse {
+   0% {
+      box-shadow: 0 0 0 0 rgba(248, 247, 255, 0.2), 0 0 0 0 rgba(248, 247, 255, 0.2);
+   }
+   40% {
+      box-shadow: 0 0 0 50px rgba(248, 247, 255, 0.2), 0 0 0 0 rgba(248, 247, 255, 0.2);
+   }
+   80% {
+      box-shadow: 0 0 0 50px rgba(255, 109, 74, 0), 0 0 0 30px rgba(255, 109, 74, 0);
+   }
+   100% {
+      box-shadow: 0 0 0 0 rgba(255, 109, 74, 0), 0 0 0 30px rgba(255, 109, 74, 0);
+   }
+}
+/* !END: Home 6 Video CSS */

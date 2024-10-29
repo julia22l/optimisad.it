@@ -1,0 +1,194 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Service CSS
+----------------------------------------*/
+.tj-service-section {
+   &.style-8 {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      position: relative;
+      z-index: 2;
+      padding-top: 120px;
+      padding-bottom: 120px;
+      background: var(--tj-color-theme-h8-primary-3);
+      .service-top-content {
+         display: flex;
+         align-items: end;
+         justify-content: space-between;
+         gap: 35px;
+         margin-bottom: 60px;
+      }
+      .tj-sec-heading {
+         max-width: 570px;
+         width: 100%;
+         margin-left: 0;
+         margin-bottom: 0px;
+      }
+
+      .service-shapes1 {
+         position: absolute;
+         bottom: 40%;
+         left: 8%;
+         max-width: 120px;
+         width: 100%;
+         z-index: -1;
+      }
+      .service-shapes2 {
+         position: absolute;
+         top: 30%;
+         right: 4%;
+         max-width: 120px;
+         width: 100%;
+         z-index: -1;
+      }
+      @media #{$lg} {
+         .service-top-content {
+            margin-bottom: 60px;
+         }
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 80px;
+         .service-top-content {
+            margin-bottom: 40px;
+            flex-direction: column;
+            .tj-sec-heading {
+               max-width: 100%;
+            }
+         }
+      }
+   }
+}
+
+.service_area {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 24px;
+   .service-style-8 {
+      position: relative;
+      z-index: 2;
+      padding-top: 50px;
+      &::before {
+         position: absolute;
+         content: "";
+         width: 110%;
+         height: 1px;
+         top: 0;
+         right: 0;
+         background: var(--tj-color-grey-7);
+      }
+      &::after {
+         position: absolute;
+         content: "";
+         width: 0;
+         height: 0;
+         border-left: 9px solid transparent;
+         border-right: 9px solid transparent;
+         border-bottom: 15px solid var(--tj-color-grey-7);
+         left: 50%;
+         top: 0;
+         transform: translateX(-50%) rotate(180deg);
+      }
+      &:nth-child(1) {
+         &::before {
+            left: 0;
+         }
+      }
+      .service-inner {
+         position: relative;
+         z-index: 3;
+         transition: 0.4s;
+         background: linear-gradient(180deg, var(--tj-color-theme-h8-primary) 0%, var(--tj-color-theme-h8-primary-1) 100%);
+         border-radius: 8px;
+         padding: 30px;
+         .service-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            line-height: 1;
+            background: var(--tj-color-light-7);
+            color: var(--tj-color-common-black);
+            font-size: 35px;
+            margin-bottom: 20px;
+            margin-top: 0px;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+            &::before {
+               position: absolute;
+               content: "";
+               width: 115px;
+               height: 115px;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               background-image: url(../images/shape/service8-icon.svg);
+               background-repeat: no-repeat;
+               background-position: center;
+               background-size: cover;
+               opacity: 0;
+               visibility: hidden;
+               z-index: -1;
+            }
+            i {
+               display: inline-block;
+               color: var(--tj-color-common-black);
+               font-size: 35px;
+            }
+         }
+         .title {
+            margin-bottom: 10px;
+            &:hover {
+               color: var(--tj-color-theme-primary);
+            }
+         }
+         p {
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
+      }
+      &:hover {
+         &::after {
+            border-bottom: 15px solid var(--tj-color-theme-primary);
+         }
+         .service-inner {
+            .service-icon {
+               color: var(--tj-color-theme-primary);
+               transform: rotate(360deg);
+               &::before {
+                  opacity: 1;
+                  visibility: visible;
+               }
+               i {
+                  color: var(--tj-color-theme-primary);
+               }
+            }
+         }
+      }
+   }
+   @media #{$lg, $md, $sm, $xs} {
+      grid-template-columns: repeat(2, 1fr);
+      .service-style-8 {
+         padding-top: 0;
+         &::before {
+            display: none;
+         }
+         &::after {
+            display: none;
+         }
+         .service-inner {
+            margin-bottom: 0;
+            padding: 30px 20px;
+         }
+      }
+   }
+   @media #{$xs} {
+      grid-template-columns: repeat(1, 1fr);
+   }
+}
+
+/* !END: Theme Service CSS */

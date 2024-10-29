@@ -1,0 +1,67 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Skills CSS
+----------------------------------------*/
+.tj-skills-section {
+   &.style-8 {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      .tj-sec-heading {
+         text-align: center;
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 80px;
+      }
+   }
+}
+
+.skill_item {
+   &.style-8 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(180deg, var(--tj-color-theme-h8-primary) 0%, var(--tj-color-theme-h8-primary-1) 100%);
+      border-radius: 50%;
+      padding: 1px;
+      &::after {
+         display: none;
+      }
+      .skill_item_inner {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         background: var(--tj-color-common-white);
+         border-radius: 50%;
+         .skill_img {
+            width: 80px;
+            height: 80px;
+            img {
+               max-width: 45px;
+               width: 100%;
+            }
+         }
+         .skill_content {
+            .title {
+               color: var(--tj-color-light-15);
+            }
+         }
+      }
+      @media #{$xs} {
+         width: 160px;
+         height: 160px;
+         .skill_item_inner {
+            .skill_content {
+               .title {
+                  font-size: 16px;
+               }
+            }
+         }
+      }
+   }
+}
+/* !END: Skills CSS */

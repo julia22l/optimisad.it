@@ -1,0 +1,59 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Hero CSS
+----------------------------------------*/
+.tj-hero-section {
+   &.style-10 {
+      background: linear-gradient(112.39deg, var(--tj-color-theme-h10-primary-1) -8.3%, var(--tj-color-theme-h10-primary) 193.23%);
+      .tj-sec-heading {
+         margin-bottom: 0;
+      }
+   }
+}
+
+.hero-left-content {
+   &.style-10 {
+      .desc {
+         p {
+            color: var(--tj-color-common-black);
+         }
+      }
+      .hero-button {
+         margin-top: 30px;
+      }
+      @media #{$md, $sm, $xs} {
+         margin-bottom: 50px;
+      }
+   }
+}
+
+.hero-image-group {
+   &.style-10 {
+      .group-image1 {
+         &::before {
+            position: absolute;
+            content: "";
+            top: -25px;
+            width: 90%;
+            height: 100%;
+            right: 25px;
+            border: 1px solid var(--tj-color-light-3);
+            background: none;
+            border-radius: 500px 500px 0px 500px;
+         }
+      }
+      .group-image2 {
+         &::before {
+            background: linear-gradient(180deg, var(--tj-color-common-white) 0%, var(--tj-color-common-white) 100%);
+            left: -10px;
+            opacity: 0.4;
+            z-index: -1;
+         }
+         img {
+            border: 6px solid var(--tj-color-theme-h10-primary-2);
+         }
+      }
+   }
+}
+/* !END: Theme Hero CSS */

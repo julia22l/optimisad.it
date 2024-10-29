@@ -1,0 +1,85 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Counter CSS
+----------------------------------------*/
+.tj-counter-section {
+   padding: 57px 0;
+   position: relative;
+   overflow: hidden;
+   &.style-7 {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      background: var(--tj-color-common-white);
+      .tj-sec-heading {
+         text-align: center;
+         max-width: 625px;
+         width: 100%;
+         justify-content: center;
+         margin: 0 auto 60px;
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 80px;
+         .tj-sec-heading {
+            margin: 0 auto 40px;
+         }
+      }
+   }
+}
+
+.counter-content-area {
+   &.style-7 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      max-width: 1160px;
+      margin: 0 auto;
+      .counter-item {
+         text-align: center;
+         border: none;
+         background: var(--tj-color-light-14);
+         max-width: 200px;
+         width: 100%;
+         padding: 60px 40px;
+         border-radius: 100px;
+         .counter-icon {
+            font-size: 50px;
+            color: var(--tj-color-common-black);
+            line-height: 1;
+            margin-bottom: 10px;
+         }
+         .tj-count {
+            font-size: 50px;
+            color: var(--tj-color-theme-h6-primary);
+            -webkit-text-fill-color: initial;
+            -webkit-text-stroke: initial;
+            line-height: 1;
+         }
+         .sub-title {
+            font-size: 18px;
+            font-family: var(--tj-ff-heading);
+            font-weight: var(--tj-fw-medium);
+            color: var(--tj-color-common-black);
+         }
+         @media #{$md, $sm} {
+            margin: 0 auto 30px;
+            padding: 40px 15px;
+            .tj-count {
+               font-size: 35px;
+            }
+         }
+         @media #{$xs} {
+            margin-bottom: 0;
+            .tj-count {
+               font-size: 40px;
+            }
+         }
+      }
+      @media #{$xs} {
+         flex-direction: column;
+      }
+   }
+}
+/* !END: Theme Counter CSS */

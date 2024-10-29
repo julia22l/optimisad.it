@@ -1,0 +1,212 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Home 6 Hero CSS
+----------------------------------------*/
+.tj-hero-section {
+   &.style-6 {
+      padding-top: 200px;
+      padding-bottom: 120px;
+      &::before {
+         content: "";
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background: radial-gradient(134.5% 101.52% at 50% 44.66%, #282828 0%, rgba(40, 40, 40, 0.7) 100%);
+         mix-blend-mode: multiply;
+         z-index: -1;
+         opacity: 0.9;
+      }
+
+      &::after {
+         content: "";
+         position: absolute;
+         left: 0;
+         bottom: 100px;
+         width: 100%;
+         height: 550px;
+         background-image: url(../images/shape/h6-hero-shape.svg);
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+      }
+
+      @media #{$xl, $lg} {
+         padding-top: 180px;
+         padding-bottom: 90px;
+
+         &::after {
+            background-size: contain;
+            bottom: 80px;
+         }
+      }
+      @media #{$md} {
+         padding-top: 160px;
+         padding-bottom: 80px;
+
+         &::after {
+            background-size: contain;
+            bottom: 60px;
+         }
+      }
+      @media #{$sm, $xs} {
+         padding-top: 160px;
+         padding-bottom: 70px;
+
+         &::after {
+            background-size: contain;
+            bottom: 60px;
+         }
+      }
+
+      .hero_content_wrap {
+         max-width: 1140px;
+         width: 100%;
+         display: inline-block;
+         position: relative;
+         z-index: 1;
+
+         .shadow_text {
+            display: block;
+            font-size: 140px;
+            line-height: 1;
+            font-weight: var(--tj-fw-bold);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 25.77%, rgba(255, 255, 255, 0) 93.46%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+         }
+
+         .subtitle {
+            font-size: 70px;
+            line-height: 1.1;
+            color: var(--tj-color-common-white);
+            margin-bottom: 10px;
+         }
+         .title {
+            margin: 0;
+            background: transparent;
+            -webkit-text-fill-color: unset;
+            color: var(--tj-color-common-white);
+            font-weight: var(--tj-fw-normal);
+            line-height: 1.1;
+
+            span {
+               color: var(--tj-color-theme-h6-primary);
+            }
+         }
+         .desc {
+            font-size: 20px;
+            line-height: 2;
+            color: var(--tj-color-grey-5);
+            margin-top: 20px;
+
+            p {
+               &:last-child {
+                  margin: 0;
+               }
+            }
+         }
+         .btn {
+            margin-top: 40px;
+            background-color: var(--tj-color-theme-h6-primary);
+
+            &::before {
+               display: none;
+            }
+
+            &:hover {
+               background-color: var(--tj-color-common-white);
+               color: var(--tj-color-theme-h6-primary);
+            }
+         }
+
+         @media #{$xl} {
+            max-width: 980px;
+            .shadow_text {
+               font-size: 110px;
+            }
+         }
+         @media #{$lg} {
+            max-width: 980px;
+            .shadow_text {
+               font-size: 90px;
+               margin-bottom: 10px;
+            }
+            .subtitle,
+            .title {
+               font-size: 60px;
+            }
+            .desc {
+               font-size: 18px;
+               margin-top: 15px;
+            }
+            .btn {
+               margin-top: 20px;
+            }
+         }
+         @media #{$md} {
+            max-width: 770px;
+            .shadow_text {
+               font-size: 80px;
+               margin-bottom: 10px;
+            }
+            .subtitle,
+            .title {
+               font-size: 50px;
+            }
+            .desc {
+               font-size: 18px;
+               line-height: 1.7;
+               margin-top: 15px;
+            }
+            .btn {
+               margin-top: 20px;
+            }
+         }
+         @media #{$sm} {
+            max-width: 100%;
+            .shadow_text {
+               font-size: 70px;
+               margin-bottom: 10px;
+            }
+            .subtitle,
+            .title {
+               font-size: 45px;
+               margin: 0;
+            }
+            .desc {
+               font-size: 16px;
+               line-height: 1.6;
+               margin-top: 15px;
+            }
+            .btn {
+               margin-top: 20px;
+            }
+         }
+         @media #{$xs} {
+            max-width: 100%;
+            .shadow_text {
+               font-size: 50px;
+               margin-bottom: 10px;
+            }
+            .subtitle,
+            .title {
+               font-size: 35px;
+               margin: 0;
+            }
+            .desc {
+               font-size: 16px;
+               line-height: 1.6;
+               margin-top: 15px;
+            }
+            .btn {
+               margin-top: 20px;
+            }
+         }
+      }
+   }
+}
+/* !END: Home 6 Hero CSS */

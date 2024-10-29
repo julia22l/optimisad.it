@@ -1,0 +1,190 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Header CSS
+----------------------------------------*/
+
+.tj-header-area {
+   &.style-9 {
+      padding: 0;
+      &.header-sticky {
+         position: absolute;
+         opacity: 0;
+         visibility: hidden;
+      }
+      &.sticky {
+         position: fixed;
+         opacity: 1;
+         visibility: visible;
+      }
+   }
+}
+.header-topbar {
+   &.style-9 {
+      background: var(--tj-color-common-white);
+      margin-bottom: 0;
+      .topbar-content-area {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         row-gap: 20px;
+         .topbar-infos {
+            ul {
+               display: flex;
+               align-items: center;
+               li {
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  font-size: 16px;
+                  font-weight: var(--tj-fw-regular);
+                  font-family: var(--tj-ff-heading);
+                  border-right: 1px solid var(--tj-color-border-8);
+                  padding-left: 25px;
+                  padding-right: 25px;
+                  color: var(--tj-color-text-body9);
+                  &:nth-child(1) {
+                     padding-left: 0;
+                  }
+                  &:nth-child(3) {
+                     border: none;
+                     padding-right: 0;
+                  }
+                  a {
+                     color: var(--tj-color-text-body9);
+                     &:hover {
+                        color: var(--tj-color-theme-h9-primary);
+                     }
+                  }
+               }
+            }
+            @media #{$sm} {
+               ul {
+                  li {
+                     &:nth-child(2) {
+                        border: none;
+                     }
+                  }
+               }
+            }
+            @media #{$xs} {
+               ul {
+                  li {
+                     &:nth-child(1) {
+                        padding-right: 12px;
+                     }
+                     &:nth-child(2) {
+                        border: none;
+                        padding-left: 12px;
+                        padding-right: 0;
+                     }
+                  }
+               }
+            }
+         }
+         .topbar-share9 {
+            width: auto;
+            ul {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               li {
+                  border-right: 1px solid var(--tj-color-border-8);
+                  padding-left: 10px;
+                  padding-right: 10px;
+                  &:first-child {
+                     padding-left: 0;
+                  }
+                  &:last-child {
+                     border: none;
+                     padding-right: 0;
+                  }
+                  a {
+                     display: inline-flex;
+                     align-items: center;
+                     justify-content: center;
+                     width: 20px;
+                     height: 20px;
+                     line-height: 1;
+                     font-size: 12px;
+                     color: var(--tj-color-common-white);
+                     background: var(--tj-color-grey-11);
+                     border-radius: 50%;
+                     &:hover {
+                        color: var(--tj-color-common-white);
+                        background-color: var(--tj-color-theme-h9-primary);
+                     }
+                  }
+               }
+            }
+         }
+      }
+      @media #{$md, $sm, $xs} {
+         .topbar-content-area {
+            justify-content: center;
+         }
+      }
+   }
+}
+
+.menu-area {
+   &.style-9 {
+      max-width: 100%;
+      border-radius: 0;
+      background: var(--tj-color-common-white);
+      border-top: 1px solid var(--tj-color-border-8);
+      border-bottom: 1px solid var(--tj-color-border-8);
+      box-shadow: none;
+      padding: 13px 0;
+      .menu-content-area {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         .site-logo {
+            max-width: 125px;
+            width: 100%;
+            a {
+               display: inline-block;
+               img {
+                  width: 100%;
+               }
+            }
+         }
+         .tj-menu-area {
+            li {
+               a {
+                  color: var(--tj-color-grey-11);
+                  background: transparent;
+                  &.active,
+                  &:hover {
+                     color: var(--tj-color-theme-h9-primary);
+                  }
+               }
+               .sub-menu {
+                  &::before {
+                     background: var(--tj-color-theme-h9-primary);
+                  }
+                  li {
+                     a {
+                        color: var(--tj-color-grey-11);
+                        &::before {
+                           background: var(--tj-color-theme-h9-primary);
+                        }
+                        &.active,
+                        &:hover {
+                           color: var(--tj-color-theme-h9-primary);
+                        }
+                     }
+                  }
+               }
+            }
+         }
+         .header-button {
+            margin-right: 0;
+            border-left: 1px solid var(--tj-color-border-8);
+            padding-left: 75px;
+         }
+      }
+   }
+}
+/* !END: Theme Header CSS */

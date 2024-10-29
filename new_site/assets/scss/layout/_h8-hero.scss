@@ -1,0 +1,257 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Home 8 Hero CSS
+----------------------------------------*/
+.tj-hero-section {
+   &.style-8 {
+      padding-top: 200px;
+      padding-bottom: 0px;
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+      background: linear-gradient(180deg, var(--tj-color-theme-h8-primary) 0%, var(--tj-color-theme-h8-primary-1) 100%);
+      .tj-sec-heading {
+         margin-bottom: 0;
+      }
+      .content-area {
+         max-width: 960px;
+         width: 100%;
+         margin: 0 auto;
+         .sub-title {
+            margin-bottom: 20px;
+         }
+         .title {
+            margin-bottom: 20px;
+         }
+         .desc {
+            font-size: 18px;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            line-height: 1.9;
+            p {
+               &:last-child {
+                  margin-bottom: 0;
+               }
+            }
+         }
+         .hero-button {
+            margin-top: 30px;
+         }
+         .hero-images {
+            margin-top: 15px;
+         }
+      }
+      .hero-icon1 {
+         position: absolute;
+         top: 16%;
+         left: 10%;
+         max-width: 100px;
+         width: 100%;
+         z-index: 1;
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-icon2 {
+         position: absolute;
+         top: 20%;
+         right: 10%;
+         max-width: 60px;
+         width: 100%;
+         z-index: 1;
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-icon3 {
+         position: absolute;
+         left: 12%;
+         bottom: 115px;
+         max-width: 120px;
+         width: 100%;
+         z-index: 1;
+         @media #{$xxl} {
+            bottom: 15%;
+         }
+         @media #{$xl} {
+            bottom: 16%;
+            max-width: 80px;
+         }
+         @media #{$lg} {
+            bottom: 30%;
+            left: 5%;
+            max-width: 80px;
+         }
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-icon4 {
+         position: absolute;
+         right: 12%;
+         top: 45%;
+         max-width: 120px;
+         width: 100%;
+         z-index: 1;
+         @media #{$xxl} {
+            right: 6%;
+         }
+         @media #{$xl} {
+            right: 5%;
+            max-width: 90px;
+         }
+         @media #{$lg} {
+            right: 2%;
+            max-width: 70px;
+         }
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-icon5 {
+         position: absolute;
+         right: 10%;
+         bottom: 0;
+         max-width: 120px;
+         width: 100%;
+         z-index: 1;
+         @media #{$xxl} {
+            right: 4%;
+         }
+         @media #{$xl} {
+            right: 2%;
+            max-width: 70px;
+         }
+         @media #{$lg} {
+            right: 2%;
+            bottom: 15%;
+            max-width: 70px;
+         }
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-icon6 {
+         position: absolute;
+         right: 10%;
+         bottom: 30%;
+         max-width: 45px;
+         width: 100%;
+         z-index: 1;
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-icon7 {
+         position: absolute;
+         right: 25%;
+         bottom: 25%;
+         max-width: 42px;
+         width: 100%;
+         z-index: 1;
+         @media #{$xxl} {
+            right: 18%;
+         }
+         @media #{$xl} {
+            right: 20%;
+            bottom: 30%;
+         }
+         @media #{$lg} {
+            right: 20%;
+            bottom: 30%;
+         }
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-icon8 {
+         position: absolute;
+         top: 16%;
+         left: 22%;
+         max-width: 60px;
+         width: 100%;
+         z-index: 1;
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-icon9 {
+         position: absolute;
+         bottom: 95px;
+         left: 95px;
+         max-width: 60px;
+         width: 100%;
+         z-index: 1;
+         @media #{$xl} {
+            left: 25px;
+         }
+         @media #{$lg} {
+            left: 25px;
+            bottom: 160px;
+         }
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-icon10 {
+         position: absolute;
+         top: 50%;
+         right: 22%;
+         max-width: 60px;
+         width: 100%;
+         z-index: 1;
+         @media #{$md, $sm, $xs} {
+            display: none;
+         }
+      }
+      .hero-shapes1 {
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: -1;
+      }
+      .hero-shapes2 {
+         position: absolute;
+         top: 0;
+         right: 0;
+         z-index: -1;
+      }
+      @media #{$md, $sm} {
+         padding-top: 180px;
+      }
+      @media #{$xs} {
+         padding-top: 160px;
+      }
+   }
+   @media #{$xl} {
+      .content-area {
+         .title {
+            font-size: 65px;
+         }
+      }
+   }
+   @media #{$lg} {
+      .content-area {
+         .title {
+            font-size: 60px;
+         }
+      }
+   }
+   @media #{$md, $sm, $xs} {
+      .content-area {
+         .title {
+            font-size: 50px;
+         }
+      }
+   }
+   @media #{$sm, $xs} {
+      .content-area {
+         .title {
+            font-size: 38px;
+         }
+      }
+   }
+}
+/* !END: Home 8 Hero CSS */

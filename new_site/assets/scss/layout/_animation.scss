@@ -1,0 +1,169 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Animation CSS
+----------------------------------------*/
+// circle animation
+@keyframes rotateImg {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.shake-y {
+   animation: shakeY 2.5s ease-in-out infinite;
+}
+@-webkit-keyframes shakeY {
+   0% {
+      transform: translateY(10px);
+   }
+   50% {
+      transform: translateY(-10px);
+   }
+   100% {
+      transform: translateY(10px);
+   }
+}
+
+@keyframes shakeY {
+   0% {
+      transform: translateY(10px);
+   }
+   50% {
+      transform: translateY(-10px);
+   }
+   100% {
+      transform: translateY(10px);
+   }
+}
+
+.pulse {
+   animation: pulse 2.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes pulse {
+   from {
+      transform: scale3d(1, 1, 1);
+   }
+
+   50% {
+      transform: scale3d(1.05, 1.05, 1.05);
+   }
+
+   to {
+      transform: scale3d(1, 1, 1);
+   }
+}
+
+@keyframes pulse {
+   from {
+      transform: scale3d(1, 1, 1);
+   }
+
+   50% {
+      transform: scale3d(1.05, 1.05, 1.05);
+   }
+
+   to {
+      transform: scale3d(1, 1, 1);
+   }
+}
+
+.skew-spin {
+   animation: skewSpin 5s linear infinite;
+}
+@-webkit-keyframes skewSpin {
+   0% {
+      transform: skewX(-10deg) skewY(-15deg) rotateY(-40deg) rotate(0);
+   }
+   100% {
+      transform: skewX(-10deg) skewY(-15deg) rotateY(-40deg) rotate(360deg);
+   }
+}
+@keyframes skewSpin {
+   0% {
+      transform: skewX(-10deg) skewY(-15deg) rotateY(-40deg) rotate(0);
+   }
+   100% {
+      transform: skewX(-10deg) skewY(-15deg) rotateY(-40deg) rotate(360deg);
+   }
+}
+
+.left-right-rotate {
+   animation: rotated-style3 2s infinite alternate;
+}
+@keyframes rotated-style3 {
+   0% {
+      transform: rotate(-10deg);
+   }
+   100% {
+      transform: rotate(10deg);
+   }
+}
+
+@-webkit-keyframes criss-cross-left {
+   0% {
+      left: -20px;
+   }
+   50% {
+      left: 50%;
+      width: 20px;
+      height: 20px;
+   }
+   100% {
+      left: 50%;
+      width: 375px;
+      height: 375px;
+   }
+}
+
+@keyframes criss-cross-left {
+   0% {
+      left: -20px;
+   }
+   50% {
+      left: 50%;
+      width: 20px;
+      height: 20px;
+   }
+   100% {
+      left: 50%;
+      width: 375px;
+      height: 375px;
+   }
+}
+@-webkit-keyframes criss-cross-right {
+   0% {
+      right: -20px;
+   }
+   50% {
+      right: 50%;
+      width: 20px;
+      height: 20px;
+   }
+   100% {
+      right: 50%;
+      width: 375px;
+      height: 375px;
+   }
+}
+@keyframes criss-cross-right {
+   0% {
+      right: -20px;
+   }
+   50% {
+      right: 50%;
+      width: 20px;
+      height: 20px;
+   }
+   100% {
+      right: 50%;
+      width: 375px;
+      height: 375px;
+   }
+}
+
+/* !END: Theme Animation CSS */

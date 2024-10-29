@@ -1,0 +1,176 @@
+@use "../utilities" as *;
+/**----------------------------------------
+START: Home 6 Services
+----------------------------------------*/
+.tj-service-section {
+   &.style-6 {
+      .tj-sec-heading {
+         max-width: 100%;
+         margin-bottom: 60px;
+
+         @media #{$xs, $sm} {
+            margin-bottom: 40px;
+         }
+      }
+   }
+}
+.services_carousel.style-6 {
+   .service_item {
+      &.style-6 {
+         margin-bottom: 0;
+      }
+   }
+
+   .services_pagination {
+      line-height: 1;
+      margin-top: 80px;
+      text-align: center;
+      .swiper-pagination-bullet {
+         width: 24px;
+         height: 24px;
+         border: 1px solid transparent;
+         background-color: transparent;
+         opacity: 0.1;
+         position: relative;
+         z-index: 1;
+         margin: 0;
+
+         &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--tj-color-theme-h6-primary);
+            border-radius: 50%;
+         }
+
+         &.swiper-pagination-bullet-active {
+            border-color: var(--tj-color-theme-h6-primary);
+            opacity: 1;
+         }
+      }
+
+      @media #{$md} {
+         margin-top: 60px;
+      }
+      @media #{$xs,$sm} {
+         margin-top: 40px;
+      }
+   }
+}
+.service_item {
+   &.style-6 {
+      max-width: 315px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 30px;
+      background-color: var(--tj-color-common-white);
+      @include transition(all 0.3s ease-in-out 0s);
+      margin-bottom: 30px;
+      .service-icon {
+         position: relative;
+         width: 100px;
+         height: 100px;
+         z-index: 1;
+         font-size: 45px;
+         line-height: 1;
+         color: var(--tj-color-common-white);
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         transform: rotate(0);
+         background-color: var(--tj-color-common-black);
+         mask-image: url(../images/shape/service-image.svg);
+         mask-repeat: no-repeat;
+         mask-position: center;
+         mask-size: contain;
+         margin-bottom: 15px;
+         &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--tj-color-theme-h6-primary);
+            mask-image: url(../images/shape/service-image.svg);
+            mask-repeat: no-repeat;
+            mask-position: center;
+            mask-size: contain;
+            transform: translateY(30px);
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.5s ease;
+         }
+         img,
+         svg {
+            max-width: 45px;
+         }
+         i {
+            display: inline-flex;
+            line-height: 1;
+            transition: all 0.5s ease;
+         }
+      }
+      .service-content {
+         .title {
+            line-height: 1.2;
+            margin: 0;
+            padding-bottom: 9px;
+            position: relative;
+            z-index: 1;
+            &::after {
+               content: "";
+               position: absolute;
+               left: 0;
+               bottom: 0;
+               height: 0.5px;
+               width: 70px;
+               background-color: var(--tj-color-grey-11);
+            }
+            a {
+               &:hover {
+                  color: var(--tj-color-theme-h6-primary);
+               }
+            }
+         }
+         .desc {
+            margin-top: 20px;
+
+            p {
+               &:last-child {
+                  margin: 0;
+               }
+            }
+         }
+      }
+
+      &:hover {
+         background-color: var(--tj-color-theme-h6-bg);
+
+         .service-icon {
+            &::after {
+               transform: translateY(0);
+               opacity: 1;
+            }
+            img,
+            svg,
+            i {
+               transform: rotate(360deg);
+            }
+         }
+         .service-content {
+            .title {
+               &::after {
+                  background-color: var(--tj-color-theme-h6-primary);
+               }
+            }
+         }
+      }
+   }
+}
+/* !END: Home 6 Services */

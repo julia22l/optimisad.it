@@ -1,0 +1,55 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Portfolio CSS
+----------------------------------------*/
+.tj-portfolio-section {
+   &.style-10 {
+      background: linear-gradient(128.24deg, var(--tj-color-theme-h10-primary-3) -1.72%, var(--tj-color-theme-h10-primary-4) 104%);
+   }
+}
+
+.portfolio-header {
+   &.style-10 {
+      .filter-menu {
+         .active {
+            color: var(--tj-color-theme-primary);
+            background: transparent;
+            background-clip: initial;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+         }
+      }
+      @media #{$xs} {
+         .filter-menu {
+            .filter {
+               margin-right: 15px;
+            }
+         }
+      }
+   }
+}
+
+.portfolio-gallery {
+   &.style-10 {
+      .portfolio-items {
+         .portfolio-single-item {
+            .portfolio-content {
+               .title-link {
+                  a {
+                     color: var(--tj-color-common-white);
+                     background: transparent;
+                     background-clip: initial;
+                     -webkit-background-clip: initial;
+                     -webkit-text-fill-color: initial;
+                     &:hover {
+                        color: var(--tj-color-light-3);
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+/* !END: Theme Portfolio CSS */

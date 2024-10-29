@@ -1,0 +1,182 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Team CSS
+----------------------------------------*/
+.tj-team-section {
+   &.style-9 {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      position: relative;
+      z-index: 2;
+      background: var(--tj-color-theme-h9-primary-1);
+      .tj-sec-heading {
+         text-align: center;
+         max-width: 760px;
+         margin: 0 auto 60px;
+         .desc {
+            font-weight: var(--tj-fw-medium);
+            margin-top: 20px;
+            p {
+               &:last-child {
+                  margin-bottom: 0;
+               }
+            }
+         }
+      }
+      .shapes-1 {
+         position: absolute;
+         left: 14%;
+         top: 42%;
+         opacity: 0.3;
+         z-index: -1;
+      }
+      .shapes-2 {
+         position: absolute;
+         right: 0;
+         bottom: 35%;
+         opacity: 0.3;
+         z-index: -1;
+      }
+      .shapes-3 {
+         position: absolute;
+         left: 0;
+         top: 20%;
+         opacity: 0.3;
+         max-width: 60px;
+         width: 100%;
+         z-index: -1;
+      }
+      .shapes-4 {
+         position: absolute;
+         right: 20%;
+         top: 60px;
+         opacity: 0.3;
+         max-width: 35px;
+         width: 100%;
+         z-index: -1;
+      }
+      .shapes-5 {
+         position: absolute;
+         right: 12%;
+         top: 25%;
+         opacity: 0.3;
+         max-width: 50px;
+         width: 100%;
+         z-index: -1;
+      }
+      .shapes-6 {
+         position: absolute;
+         left: 75px;
+         bottom: 20%;
+         opacity: 0.3;
+         max-width: 35px;
+         width: 100%;
+         z-index: -1;
+      }
+      @media #{$md, $sm, $xs} {
+         padding-top: 80px;
+         padding-bottom: 80px;
+         .tj-sec-heading {
+            margin: 0 auto 40px;
+         }
+      }
+   }
+
+   .tj-team-item {
+      &.style-9 {
+         max-width: 310px;
+         width: 100%;
+         margin-bottom: 30px;
+         position: relative;
+         z-index: 2;
+         &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 41.87%, rgba(30, 30, 30, 0.7) 100%);
+            z-index: 1;
+            opacity: 1;
+            visibility: visible;
+         }
+         &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: linear-gradient(0deg, rgba(251, 181, 0, 0.7) 0%, rgba(255, 255, 255, 0) 92.89%);
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+         }
+         .team-image {
+            max-width: 310px;
+            width: 100%;
+            border-radius: 0;
+            img {
+               width: 100%;
+               border-radius: 0;
+            }
+         }
+         .tj-team-content {
+            left: 50%;
+            transform: translateX(-50%);
+            top: auto;
+            bottom: 50px;
+            z-index: 3;
+            &::before {
+               background: linear-gradient(180deg, var(--tj-color-theme-h9-primary) 0%, rgba(251, 181, 0, 0) 93.7%);
+            }
+         }
+         .team-share {
+            padding: 12px 35px;
+
+            .dot-style {
+               display: inline-flex;
+               align-items: center;
+               gap: 30px;
+               li {
+                  width: 0px;
+                  margin-right: 10px;
+                  &::before {
+                     right: -28px;
+                  }
+                  a {
+                     display: inline-flex;
+                     align-items: center;
+                     width: 25px;
+                     height: 25px;
+                     line-height: 1px;
+                     font-size: 16px;
+                     background: transparent;
+                     color: var(--tj-color-common-black);
+                     &:hover {
+                        color: var(--tj-color-theme-h9-primary);
+                     }
+                  }
+               }
+            }
+         }
+         @media #{$xs} {
+            margin: 0 auto 30px;
+         }
+         &:hover {
+            &::before {
+               opacity: 0;
+               visibility: hidden;
+            }
+            &::after {
+               opacity: 1;
+               visibility: visible;
+            }
+         }
+      }
+   }
+}
+
+/* !END: Theme Team CSS */

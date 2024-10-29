@@ -1,0 +1,32 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Service CSS
+----------------------------------------*/
+.tj-service-section {
+   padding-top: 120px;
+   padding-bottom: 120px;
+   position: relative;
+   @media #{$md, $sm, $xs} {
+      padding-top: 80px;
+      padding-bottom: 80px;
+   }
+}
+
+.tj-service-item {
+   &.style-10 {
+      background: none;
+      border: 1px solid var(--tj-color-light-2);
+      .service-icon {
+         color: var(--tj-color-light-3);
+      }
+      &:hover {
+         border-color: var(--tj-color-light-3);
+         .service-inner {
+            background-color: transparent;
+         }
+      }
+   }
+}
+
+/* !END: Theme Service CSS */
