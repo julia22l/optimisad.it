@@ -1,0 +1,11 @@
+:root[data-tm-layout=dark] {
+  --dark-color1: #1c1e22;
+  --dark-color2: #222429;
+  --dark-color3: #2b242b;
+  --theme-color-white: var(--dark-color1);
+  --theme-color-white-rgb: 255, 255, 255;
+  --theme-color-light: var(--dark-color2);
+  --theme-color-gray: var(--dark-color3);
+  --body-bg: var(--dark-color1);
+  --headings-color: #fff;
+}

@@ -1,0 +1,279 @@
+/* Optimisad — personalizzazioni sopra il tema Gencyo */
+
+/* Palette: blu avio al posto dell'arancione di default del tema */
+:root {
+  --theme-color1: #4A7FB5;
+  --theme-color1-rgb: 74, 127, 181;
+  --theme-color1-text-color: #fff;
+}
+
+/* Icone a stella e a spunta ridisegnate come icon-font per seguire il colore accent
+   (i png originali star.png / check-2-1.png sono arancioni fissi e non seguono la palette) */
+.sub-title-star {
+  color: var(--theme-color1);
+  margin-right: 8px;
+  font-size: 13px;
+}
+.pricing-check {
+  color: var(--theme-color1);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Logo grafico (SVG con contorni del font incorporati, nessuna dipendenza da webfont) */
+.logo img,
+.nav-logo img {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+.footer-logo img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+/* Blocchi statistica (pagina Chi Sono) */
+.stat-block {
+  text-align: center;
+}
+.stat-block .stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--theme-color1);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.stat-block p {
+  margin: 0;
+}
+
+/* Sezione "cosa non faccio" */
+.no-list-items ul li i {
+  color: #9aa0a6;
+}
+
+/* Badge testimonianza in arrivo */
+.testimonial-pending {
+  display: inline-block;
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* Servizio: blocco dettaglio completo (pagina Servizi) */
+.service-detail-block {
+  scroll-margin-top: 140px;
+}
+.service-detail-block + .service-detail-block {
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.service-detail-block .problem-box {
+  background: var(--theme-color-black);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.service-detail-block .fit-box {
+  border-left: 3px solid var(--theme-color1);
+  padding-left: 20px;
+  margin-top: 30px;
+}
+
+/* Riepilogo prezzi - tabella */
+.price-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.price-summary-table th,
+.price-summary-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.price-summary-table th {
+  color: var(--theme-color1);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+/* select nel form contatti */
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23ffffff'%3E%3Cpath d='M5.5 7.5l4.5 5 4.5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* Hero e page-title senza foto stock (il tema non fornisce foto reali) */
+.hero-section.no-photo-bg {
+  background-color: var(--theme-color3);
+  background-image: radial-gradient(circle at 15% 20%, rgba(74, 127, 181, 0.18) 0%, rgba(74, 127, 181, 0) 45%), linear-gradient(135deg, #0d0d0d 0%, #151515 55%, #10161c 100%);
+}
+
+/* Hero home: foto reale (via lattea) con overlay scuro/blu per leggibilità del testo */
+.hero-section.hero-photo-bg {
+  background-color: var(--theme-color3);
+  background-image: linear-gradient(135deg, rgba(13, 13, 13, 0.75) 0%, rgba(21, 21, 21, 0.55) 55%, rgba(16, 22, 28, 0.8) 100%), radial-gradient(circle at 15% 20%, rgba(74, 127, 181, 0.18) 0%, rgba(74, 127, 181, 0) 45%), url("../images/banner/hero-luci-led.jpg");
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat;
+}
+.page-title {
+  background-image: none !important;
+  background-color: var(--theme-color3);
+}
+.page-title:before {
+  background: linear-gradient(179deg, rgba(41, 41, 41, 0.6) 19.26%, rgba(74, 127, 181, 0.45) 97.47%);
+}
+
+/* Checklist generica (usata fuori dal contesto .about-content) */
+.about-list-items {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 35px 50px;
+  border-radius: 20px;
+}
+.about-list-items ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.about-list-items ul li {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.about-list-items ul li:not(:last-child) {
+  margin-bottom: 18px;
+}
+.about-list-items ul li i {
+  color: var(--theme-color1);
+  flex-shrink: 0;
+}
+.about-list-items.no-list-items ul li i {
+  color: #6b6b6b;
+}
+
+/* Box di richiamo (nota/avviso all'interno del testo) */
+.callout-box {
+  border-left: 3px solid var(--theme-color1);
+  padding: 20px 30px;
+  background: rgba(74, 127, 181, 0.08);
+  border-radius: 0 12px 12px 0;
+}
+
+/* Link con freccia usato fuori dalle card servizio (es. hero) */
+a.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+a.arrow-link:hover {
+  color: var(--theme-color1);
+}
+
+/* Card testimonianza semplificata (senza foto/testo recensione) */
+.testimonial-block-one.simple .inner-box {
+  min-height: auto;
+  text-align: center;
+}
+.testimonial-block-one.simple .inner-box .infu {
+  padding-top: 0;
+  justify-content: center;
+}
+.testimonial-block-one.simple .inner-box .testimonial-pending {
+  display: block;
+  margin-top: 14px;
+}
+
+/* Blocco statistiche a numero (pagina Chi Sono) */
+.numbers-row {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  padding: 50px 20px;
+}
+
+/* Pacchetti prezzi: tagline, prezzo libero e meta info */
+.pricing-block .pricing-tagline {
+  font-style: italic;
+  opacity: 0.75;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+.pricing-block .price-tag {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.pricing-block .price-tag .from {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--theme-color1);
+  display: block;
+  margin-bottom: 4px;
+}
+.pricing-block .price-note {
+  font-size: 13px;
+  opacity: 0.6;
+  display: block;
+  margin-top: 4px;
+}
+.pricing-block .pricing-meta {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Pagina contatti: lista info + label form */
+.contact-simple-list {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+}
+.contact-simple-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 17px;
+}
+.contact-simple-list li:not(:last-child) {
+  margin-bottom: 20px;
+}
+.contact-simple-list li i {
+  color: var(--theme-color1);
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.contact-simple-list li a {
+  color: #fff;
+}
+.contact-simple-list li a:hover {
+  color: var(--theme-color1);
+}
+.form-label {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.privacy-note {
+  font-size: 14px;
+  opacity: 0.65;
+  margin-top: 30px;
+}

@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --theme-color1: #b443ff;
+  --theme-color2: #00031c;
+  --theme-color3: #121e9f;
+  --theme-color1-rgb: 180, 67, 255;
+  --theme-color2-rgb: 0, 3, 28;
+  --theme-color3-rgb: 18, 30, 159;
+  --theme-color1-text-color: #fff;
+  --theme-color2-text-color: #fff;
+  --theme-color3-text-color: #fff;
+  --theme-color-linear: linear-gradient(90deg, #b443ff 0%, #3055eb 50.81%, #1aafd8 100%);
+  --theme-color1-text-color: #70759f;
+  --theme-color1-border-rgba: rgba(37, 46, 129, 0.5);
+  --theme-color1-bg: #020628;
+  --body-font-family: "Urbanist", sans-serif;
+  --heading-font-family: "Urbanist", sans-serif;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--theme-color1-text-color);
+}
+
+.container-1540 {
+  max-width: 1540px;
+}
