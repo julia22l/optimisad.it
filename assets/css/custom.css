@@ -96,12 +96,12 @@ strong {
 /* Logo grafico (SVG con contorni del font incorporati, nessuna dipendenza da webfont) */
 .logo img,
 .nav-logo img {
-  height: 34px;
+  height: 48px;
   width: auto;
   display: block;
 }
 .footer-logo img {
-  height: 30px;
+  height: 40px;
   width: auto;
   display: block;
 }
