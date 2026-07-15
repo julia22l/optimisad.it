@@ -18,9 +18,6 @@
 		resultBox.style.display = 'block';
 	}
 
-	var recaptchaSitekey = form.dataset.recaptchaSitekey;
-	var recaptchaResponseField = form.querySelector('#g-recaptcha-response');
-
 	function submitForm() {
 		var formData = new FormData(form);
 
@@ -44,26 +41,23 @@
 			.finally(function () {
 				submitBtn.disabled = false;
 				btnTitle.textContent = btnTitleOriginalText;
+				if (form.querySelector('.h-captcha') && typeof hcaptcha !== 'undefined') {
+					hcaptcha.reset();
+				}
 			});
 	}
 
 	form.addEventListener('submit', function (e) {
 		e.preventDefault();
 
+		if (form.querySelector('.h-captcha') && typeof hcaptcha !== 'undefined' && !hcaptcha.getResponse()) {
+			showResult('Conferma di non essere un robot prima di inviare il modulo.', false);
+			return;
+		}
+
 		submitBtn.disabled = true;
 		btnTitle.textContent = 'Invio in corso...';
 
-		if (recaptchaSitekey && typeof grecaptcha !== 'undefined') {
-			grecaptcha.ready(function () {
-				grecaptcha.execute(recaptchaSitekey, { action: 'submit' })
-					.then(function (token) {
-						recaptchaResponseField.value = token;
-						submitForm();
-					})
-					.catch(submitForm);
-			});
-		} else {
-			submitForm();
-		}
+		submitForm();
 	});
 })();

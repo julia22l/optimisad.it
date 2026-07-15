@@ -165,8 +165,7 @@
       <div class="row g-5">
         <div class="col-lg-7">
           <!-- Form gestito da Web3Forms (https://web3forms.com) via fetch in custom-contact.js, niente backend proprio richiesto. -->
-          <form id="contact_form" name="contact_form" action="https://api.web3forms.com/submit" method="post"
-            data-recaptcha-sitekey="YOUR_RECAPTCHA_SITE_KEY">
+          <form id="contact_form" name="contact_form" action="https://api.web3forms.com/submit" method="post">
             <input type="hidden" name="access_key" value="a424b384-ca26-4b79-93a6-da7b5b2d9c7d">
             <input type="hidden" name="subject" value="Nuova richiesta di contatto da optimisad.it">
             <input type="checkbox" name="botcheck" class="d-none">
@@ -204,7 +203,9 @@
               <textarea name="messaggio" class="form-control" rows="6"
                 placeholder="Raccontami il tuo progetto..."></textarea>
             </div>
-            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+            <div class="mb-4">
+              <div class="h-captcha" data-sitekey="YOUR_HCAPTCHA_SITE_KEY"></div>
+            </div>
             <button type="submit" class="btn-style-one">
               <span class="btn-arrow-left"> <img src="assets/images/icons/right-arrow-1-2.png" alt=""> </span>
               <span class="btn-title">Invia la richiesta</span>
@@ -238,8 +239,8 @@
       </div>
       <div class="container">
         <div class="footer-top-wrapper wow fadeInUp" data-wow-delay=".2s">
-          <a href="index.html" class="footer-logo"><img src="assets/images/logo/optimisad-logo-footer.png" alt="Optimisad"
-              height="40"></a>
+          <a href="index.html" class="footer-logo"><img src="assets/images/logo/optimisad-logo-footer.png"
+              alt="Optimisad" height="40"></a>
           <div class="footer-info">
             <a class="mail" href="mailto:info@optimisad.it">info@optimisad.it</a>
           </div>
@@ -333,7 +334,7 @@
   <script src="assets/js/mixitup.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/script-gsap.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
   <script src="assets/js/custom-contact.js"></script>
 </body>
 
