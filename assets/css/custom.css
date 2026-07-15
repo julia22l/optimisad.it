@@ -256,6 +256,26 @@ a.arrow-link:hover {
   transform: translateY(0);
 }
 
+/* Sezione "Certificazioni" (home): come per "Cosa faccio", disattiviamo lo spazio
+   riservato in alto e l'animazione hover del tema — qui il link "Mostra credenziale"
+   è l'unica azione della card, quindi deve restare visibile senza bisogno di hover
+   (su touch il tema lo terrebbe altrimenti nascosto, essendo pensato come CTA
+   secondaria rispetto a un titolo-link che qui non c'è). */
+.home-certifications-section .service-block-one .inner-block {
+  padding-top: 40px;
+}
+.home-certifications-section .service-block-one .inner-block .content-box {
+  transform: translateY(0);
+}
+.home-certifications-section .service-block-one .inner-block .content-box .icon {
+  color: var(--theme-color1);
+}
+.home-certifications-section .service-block-one .inner-block .content-box .arrow-link {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 16px;
+}
+
 /* Pagina contatti: lista info + label form */
 .contact-simple-list {
   list-style: none;
