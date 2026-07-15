@@ -187,17 +187,19 @@ a.arrow-link:hover {
   padding: 50px 20px;
 }
 
-/* Sezione "Cosa faccio" (home): icone ingrandite per ospitare l'illustrazione Google Ads
-   in modo leggibile, applicata a tutte le card per mantenerle coerenti tra loro */
-.home-services-section .service-block-one .inner-block .content-box .icon {
-  font-size: 100px;
+/* Sezione "Cosa faccio" (home): illustrazione Google Ads a piena larghezza di card,
+   al posto della semplice icona (le altre card restano con icona standard) */
+.home-services-section .service-block-one .inner-block .content-box .icon.icon-image {
+  display: block;
+  width: 100%;
   margin-bottom: 20px;
 }
-.home-services-section .service-block-one .inner-block .content-box .icon img {
-  width: 90px;
-  height: 90px;
+.home-services-section .service-block-one .inner-block .content-box .icon.icon-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 /* Pagina contatti: lista info + label form */
