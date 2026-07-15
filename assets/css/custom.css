@@ -166,18 +166,25 @@ a.arrow-link:hover {
   color: var(--theme-color1);
 }
 
-/* Card testimonianza semplificata (senza foto/testo recensione) */
+/* Card testimonianza semplificata (senza foto cliente) */
 .testimonial-block-one.simple .inner-box {
   min-height: auto;
   text-align: center;
 }
 .testimonial-block-one.simple .inner-box .infu {
-  padding-top: 0;
+  padding-top: 20px;
   justify-content: center;
 }
 .testimonial-block-one.simple .inner-box .testimonial-pending {
   display: block;
   margin-top: 14px;
+}
+/* Citazione: il tema la pensa per uno slide a piena larghezza (font-size 20px, max-width
+   710px); qui sta in una card stretta a 4 colonne, quindi la rimpiccioliamo e togliamo
+   il max-width che altrimenti non avrebbe effetto */
+.home-testimonials-section .testimonial-block-one .inner-box .text {
+  font-size: 15px;
+  max-width: none;
 }
 
 /* Blocco statistiche a numero (pagina Chi Sono) */
