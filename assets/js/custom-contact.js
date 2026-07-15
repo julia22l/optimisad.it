@@ -1,23 +1,51 @@
-(function($) {
-	$("#contact_form").validate({
-		submitHandler: function(form) {
-			var form_btn = $(form).find('button[type="submit"]');
-			var form_result_div = '#form-result';
-			$(form_result_div).remove();
-			form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-			var form_btn_old_msg = form_btn.html();
-			form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-			$(form).ajaxSubmit({
-				dataType:  'json',
-				success: function(data) {
-					if( data.status == 'true' ) {
-						$(form).find('.form-control').val('');
-					}
-					form_btn.prop('disabled', false).html(form_btn_old_msg);
-					$(form_result_div).html(data.message).fadeIn('slow');
-					setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+(function () {
+	var form = document.getElementById('contact_form');
+	if (!form) return;
+
+	var submitBtn = form.querySelector('button[type="submit"]');
+	var btnTitle = submitBtn.querySelector('.btn-title');
+	var btnTitleOriginalText = btnTitle.textContent;
+
+	var resultBox = document.createElement('div');
+	resultBox.id = 'form-result';
+	resultBox.style.display = 'none';
+	resultBox.style.marginBottom = '20px';
+	submitBtn.parentNode.insertBefore(resultBox, submitBtn);
+
+	function showResult(message, isSuccess) {
+		resultBox.textContent = message;
+		resultBox.className = 'alert ' + (isSuccess ? 'alert-success' : 'alert-danger');
+		resultBox.style.display = 'block';
+	}
+
+	form.addEventListener('submit', function (e) {
+		e.preventDefault();
+
+		submitBtn.disabled = true;
+		btnTitle.textContent = 'Invio in corso...';
+
+		var formData = new FormData(form);
+
+		fetch(form.action, {
+			method: 'POST',
+			body: formData,
+			headers: { Accept: 'application/json' }
+		})
+			.then(function (response) { return response.json(); })
+			.then(function (data) {
+				if (data.success) {
+					showResult('Grazie! Il tuo messaggio è stato inviato. Ti risponderò entro 24–48 ore.', true);
+					form.reset();
+				} else {
+					showResult("Si è verificato un errore nell'invio. Riprova o scrivimi direttamente a info@optimisad.it.", false);
 				}
+			})
+			.catch(function () {
+				showResult("Si è verificato un errore nell'invio. Riprova o scrivimi direttamente a info@optimisad.it.", false);
+			})
+			.finally(function () {
+				submitBtn.disabled = false;
+				btnTitle.textContent = btnTitleOriginalText;
 			});
-		}
 	});
-})(jQuery);
+})();
