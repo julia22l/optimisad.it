@@ -18,20 +18,13 @@
 		resultBox.style.display = 'block';
 	}
 
-	form.addEventListener('submit', function (e) {
-		e.preventDefault();
+	var recaptchaSitekey = form.dataset.recaptchaSitekey;
+	var recaptchaResponseField = form.querySelector('#g-recaptcha-response');
 
-		if (form.querySelector('.g-recaptcha') && typeof grecaptcha !== 'undefined' && !grecaptcha.getResponse()) {
-			showResult('Conferma di non essere un robot prima di inviare il modulo.', false);
-			return;
-		}
-
-		submitBtn.disabled = true;
-		btnTitle.textContent = 'Invio in corso...';
-
+	function submitForm() {
 		var formData = new FormData(form);
 
-		fetch(form.action, {
+		return fetch(form.action, {
 			method: 'POST',
 			body: formData,
 			headers: { Accept: 'application/json' }
@@ -51,9 +44,26 @@
 			.finally(function () {
 				submitBtn.disabled = false;
 				btnTitle.textContent = btnTitleOriginalText;
-				if (form.querySelector('.g-recaptcha') && typeof grecaptcha !== 'undefined') {
-					grecaptcha.reset();
-				}
 			});
+	}
+
+	form.addEventListener('submit', function (e) {
+		e.preventDefault();
+
+		submitBtn.disabled = true;
+		btnTitle.textContent = 'Invio in corso...';
+
+		if (recaptchaSitekey && typeof grecaptcha !== 'undefined') {
+			grecaptcha.ready(function () {
+				grecaptcha.execute(recaptchaSitekey, { action: 'submit' })
+					.then(function (token) {
+						recaptchaResponseField.value = token;
+						submitForm();
+					})
+					.catch(submitForm);
+			});
+		} else {
+			submitForm();
+		}
 	});
 })();
