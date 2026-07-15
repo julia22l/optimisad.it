@@ -204,11 +204,23 @@ a.arrow-link:hover {
 /* Il tema riserva spazio in alto (padding-top:125px) e sposta il contenuto di 58px
    per un'animazione hover che qui non usiamo: lo spazio vuoto va ridotto al minimo
    e tutto il testo deve essere leggibile senza hover */
+.home-services-section .service-block-one {
+  height: 100%;
+}
 .home-services-section .service-block-one .inner-block {
   padding-top: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .home-services-section .service-block-one .inner-block .content-box {
   transform: translateY(0);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.home-services-section .service-block-one .inner-block .content-box .text {
+  flex: 1;
 }
 
 /* Pagina contatti: lista info + label form */
