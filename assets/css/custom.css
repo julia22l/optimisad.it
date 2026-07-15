@@ -181,10 +181,15 @@ a.arrow-link:hover {
 }
 /* Citazione: il tema la pensa per uno slide a piena larghezza (font-size 20px, max-width
    710px); qui sta in una card stretta a 4 colonne, quindi la rimpiccioliamo e togliamo
-   il max-width che altrimenti non avrebbe effetto */
+   il max-width che altrimenti non avrebbe effetto. flex:1 + align-items:center centra
+   la citazione verticalmente nello spazio sopra il nome/ruolo, a prescindere dalla
+   lunghezza del testo (le card sono equal-height, vedi regola .testimonial-block-one sotto) */
 .home-testimonials-section .testimonial-block-one .inner-box .text {
   font-size: 15px;
   max-width: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 /* Blocco statistiche a numero (pagina Chi Sono) */
