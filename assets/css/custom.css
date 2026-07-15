@@ -7,6 +7,14 @@
   --theme-color1-text-color: #fff;
 }
 
+/* Il tema Gencyo imposta strong/b su #333 (pensato per sfondi chiari): sul nostro
+   body-bg quasi nero (#0D0D0D) il testo in grassetto risulta praticamente invisibile.
+   Lo riportiamo al bianco dei titoli, come il resto del testo body chiaro-su-scuro. */
+b,
+strong {
+  color: var(--headings-color);
+}
+
 /* Icone a stella e a spunta ridisegnate come icon-font per seguire il colore accent
    (i png originali star.png / check-2-1.png sono arancioni fissi e non seguono la palette) */
 .sub-title-star {
