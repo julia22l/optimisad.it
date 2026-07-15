@@ -157,7 +157,19 @@ strong {
 
 /* Testo digitato nel form contatti: il tema lo imposta a #686a6f (poco leggibile su sfondo input #222222) */
 .form-control {
-  color: var(--headings-color);
+  color: var(--headings-color) !important;
+}
+/* L'autofill del browser (Chrome/Safari) forza uno sfondo chiaro sugli input via
+   stile interno non sovrascrivibile con background-color: serve il trucco
+   dell'inset box-shadow per mantenere lo sfondo scuro del tema, altrimenti il
+   testo bianco sparisce su sfondo chiaro quando un campo viene autocompilato. */
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--headings-color);
+  -webkit-box-shadow: 0 0 0 1000px #222222 inset;
+  box-shadow: 0 0 0 1000px #222222 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 /* Hero e page-title senza foto stock (il tema non fornisce foto reali) */
