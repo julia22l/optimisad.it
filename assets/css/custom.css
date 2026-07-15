@@ -336,6 +336,17 @@ a.arrow-link:hover {
   margin-top: 16px;
 }
 
+/* Pagina chi-sono: foto in "Intro" senza la maschera decorativa a blob del
+   tema (pensata per foto ritratto semplici) — con uno sfondo articolato
+   (evento/conference) il taglio del mask risultava irregolare sugli
+   elementi dello sfondo. Rettangolo con angoli arrotondati, coerente con
+   il comportamento che il tema applica già sotto i 1200px. */
+.about-section .about-image-1 {
+  mask: none;
+  -webkit-mask: none;
+  max-width: 100%;
+}
+
 /* Pagina contatti: lista info + label form */
 .contact-simple-list {
   list-style: none;
