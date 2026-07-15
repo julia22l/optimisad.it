@@ -187,6 +187,31 @@ a.arrow-link:hover {
   padding: 50px 20px;
 }
 
+/* Card di dimensione uniforme in tutte le griglie del sito (griglia "Cosa faccio" in
+   home, griglia servizi in servizi.html, testimonianze in home): Bootstrap equalizza
+   già l'altezza delle colonne di una row, ma non quella dei blocchi-card al loro
+   interno, quindi a testo di lunghezza diversa corrispondono card di altezza diversa.
+   Qui i blocchi vengono estesi a tutta l'altezza della colonna con flexbox, cosí i
+   bordi delle card si allineano a prescindere dalla lunghezza di titolo/testo. */
+.service-block-one,
+.testimonial-block-one {
+  height: 100%;
+}
+.service-block-one .inner-block,
+.testimonial-block-one .inner-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.service-block-one .inner-block .content-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.service-block-one .inner-block .content-box .text {
+  flex: 1;
+}
+
 /* Sezione "Cosa faccio" (home): illustrazione Google Ads a piena larghezza di card,
    al posto della semplice icona (le altre card restano con icona standard) */
 .home-services-section .service-block-one .inner-block .content-box .icon.icon-image {
@@ -204,23 +229,11 @@ a.arrow-link:hover {
 /* Il tema riserva spazio in alto (padding-top:125px) e sposta il contenuto di 58px
    per un'animazione hover che qui non usiamo: lo spazio vuoto va ridotto al minimo
    e tutto il testo deve essere leggibile senza hover */
-.home-services-section .service-block-one {
-  height: 100%;
-}
 .home-services-section .service-block-one .inner-block {
   padding-top: 40px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 .home-services-section .service-block-one .inner-block .content-box {
   transform: translateY(0);
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.home-services-section .service-block-one .inner-block .content-box .text {
-  flex: 1;
 }
 
 /* Pagina contatti: lista info + label form */
