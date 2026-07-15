@@ -22,6 +22,57 @@ strong {
   margin-right: 8px;
   font-size: 13px;
 }
+
+/* Il tema Gencyo tratta ".sub-title" (il testo con la stella) come un piccolo
+   "eyebrow" (16px) sopra il vero titolo h2 ".title" (50px) — ma sul nostro sito
+   il testo con la stella (es. "Certificazioni", "Cosa faccio") è il titolo di
+   sezione vero e proprio, mentre l'h2 sotto è più una tagline. Invertiamo
+   l'enfasi visiva: ingrandiamo il sub-title e rimpiccioliamo il title sotto. */
+.sec-title .sub-title {
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--headings-color);
+}
+.sec-title .sub-title .sub-title-star {
+  font-size: 24px;
+}
+.sec-title .title {
+  font-size: 20px;
+  font-weight: 400;
+}
+@media (max-width: 1199.98px) {
+  .sec-title .sub-title {
+    font-size: 28px;
+  }
+  .sec-title .sub-title .sub-title-star {
+    font-size: 20px;
+  }
+  .sec-title .title {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767.98px) {
+  .sec-title .sub-title {
+    font-size: 24px;
+  }
+  .sec-title .sub-title .sub-title-star {
+    font-size: 18px;
+  }
+  .sec-title .title {
+    font-size: 17px;
+  }
+}
+@media (max-width: 469.98px) {
+  .sec-title .sub-title {
+    font-size: 21px;
+  }
+  .sec-title .sub-title .sub-title-star {
+    font-size: 16px;
+  }
+  .sec-title .title {
+    font-size: 16px;
+  }
+}
 .pricing-check {
   color: var(--theme-color1);
   font-size: 14px;
