@@ -21,6 +21,11 @@
 	form.addEventListener('submit', function (e) {
 		e.preventDefault();
 
+		if (form.querySelector('.g-recaptcha') && typeof grecaptcha !== 'undefined' && !grecaptcha.getResponse()) {
+			showResult('Conferma di non essere un robot prima di inviare il modulo.', false);
+			return;
+		}
+
 		submitBtn.disabled = true;
 		btnTitle.textContent = 'Invio in corso...';
 
@@ -46,6 +51,9 @@
 			.finally(function () {
 				submitBtn.disabled = false;
 				btnTitle.textContent = btnTitleOriginalText;
+				if (form.querySelector('.g-recaptcha') && typeof grecaptcha !== 'undefined') {
+					grecaptcha.reset();
+				}
 			});
 	});
 })();
