@@ -171,6 +171,13 @@ strong {
   background-position: center, center, center;
   background-repeat: no-repeat;
 }
+/* Sotto i 992px la sezione è alta al massimo ~700px CSS: una variante più piccola
+   basta anche su schermi ad alto DPR e riduce di netto il peso su mobile (LCP). */
+@media (max-width: 991.98px) {
+  .hero-section.hero-photo-bg {
+    background-image: linear-gradient(135deg, rgba(13, 13, 13, 0.75) 0%, rgba(21, 21, 21, 0.55) 55%, rgba(16, 22, 28, 0.8) 100%), radial-gradient(circle at 15% 20%, rgba(74, 127, 181, 0.18) 0%, rgba(74, 127, 181, 0) 45%), url("../images/banner/hero-luci-led-mobile.jpg");
+  }
+}
 .page-title {
   background-image: none !important;
   background-color: var(--theme-color3);
