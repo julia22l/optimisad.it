@@ -87,11 +87,6 @@ strong {
     font-size: 16px;
   }
 }
-.pricing-check {
-  color: var(--theme-color1);
-  font-size: 14px;
-  flex-shrink: 0;
-}
 
 /* Logo grafico (SVG con contorni del font incorporati, nessuna dipendenza da webfont) */
 .logo img,
@@ -127,12 +122,6 @@ strong {
 }
 
 /* Badge testimonianza in arrivo */
-.testimonial-pending {
-  display: inline-block;
-  font-size: 13px;
-  font-style: italic;
-  opacity: 0.6;
-}
 
 /* Servizio: blocco dettaglio completo (pagina Servizi) */
 .service-detail-block {
@@ -173,10 +162,6 @@ strong {
 }
 
 /* Hero e page-title senza foto stock (il tema non fornisce foto reali) */
-.hero-section.no-photo-bg {
-  background-color: var(--theme-color3);
-  background-image: radial-gradient(circle at 15% 20%, rgba(74, 127, 181, 0.18) 0%, rgba(74, 127, 181, 0) 45%), linear-gradient(135deg, #0d0d0d 0%, #151515 55%, #10161c 100%);
-}
 
 /* Hero home: foto reale (via lattea) con overlay scuro/blu per leggibilità del testo */
 .hero-section.hero-photo-bg {
@@ -254,10 +239,6 @@ a.arrow-link:hover {
 .testimonial-block-one.simple .inner-box .infu {
   padding-top: 20px;
   justify-content: center;
-}
-.testimonial-block-one.simple .inner-box .testimonial-pending {
-  display: block;
-  margin-top: 14px;
 }
 /* Citazione: il tema la pensa per uno slide a piena larghezza (font-size 20px, max-width
    710px); qui sta in una card stretta a 4 colonne, quindi la rimpiccioliamo e togliamo
