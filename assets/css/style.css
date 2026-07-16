@@ -37,22 +37,9 @@ License: copyright commercial
 29. Clients Section
 30. Main Footer
 **********************************************/
-@import url("https://fonts.cdnfonts.com/css/beatrice-display-trial");
-@import url("animate.css");
-@import url("swiper.min.css");
-@import url("slick.css");
-@import url("jquery.fancybox.min.css");
-@import url("nice-select.css");
-@import url("jquery-ui.css");
-@import url("linear.css");
-@import url("magnific-popup.css");
-@import url("fontawesome-free.css");
-@import url("fontawesome.css");
-@import url("flaticon.css");
-@import url("flaticon-tech.css");
-@import url("flaticon-set-business.css");
-@import url("tm-bs-mp.css");
-@import url("tm-utility-classes.css");
+/* Questi @import sono stati spostati in <link> diretti nell'<head> di ogni pagina
+   HTML (stesso ordine, per preservare la cascata) perché @import in CSS forza il
+   browser a scaricarli in serie invece che in parallelo, bloccando il rendering. */
 :root {
   --theme-color1: #FF6B1E;
   --theme-color2: #151515;
