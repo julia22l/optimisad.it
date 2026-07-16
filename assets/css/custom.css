@@ -7,6 +7,39 @@
   --theme-color1-text-color: #fff;
 }
 
+/* Font di sistema con metriche scalate per approssimare "Beatrice Trial" (font
+   di terze parti da fonts.cdnfonts.com, caricato in modo non bloccante): senza
+   questo, il fallback generico "sans-serif" ha un box (larghezza/altezza riga)
+   molto diverso dal font reale, e lo swap al caricamento provoca un layout
+   shift enorme sull'h1.hero-title in home (CLS 0.597 misurato via PageSpeed
+   Insights sul report del 2026-07-16, 8 giri dopo il deploy). Valori calcolati
+   con fontTools confrontando le metriche reali di Beatrice Trial (Bold/Regular)
+   con quelle di Liberation Sans (clone metric-compatible di Arial) — stesso
+   algoritmo usato da next/font. Se il font "Beatrice Trial" viene mai
+   sostituito, questi valori vanno ricalcolati sul nuovo font.
+   unicode-range limitato ai SOLI 64 glifi realmente presenti in Beatrice Trial
+   (verificato con fontTools: spazio, punto, 0-9, A-Z, a-z — il font "trial" non
+   ha NEMMENO gli accenti italiani o quasi tutta la punteggiatura, es. virgola,
+   due punti, punto interrogativo, parentesi, "·", "—"). Senza questo limite,
+   il fallback scalato intercetterebbe anche quei caratteri (che già oggi, con
+   o senza questo fix, ricadono sempre sul fallback perché Beatrice non li ha),
+   allargandoli del ~2% e cambiando gli a-capo di paragrafi/footer che li usano
+   — un effetto collaterale reale ma inutile, dato che quei caratteri non fanno
+   mai lo swap "Beatrice reale" e quindi non contribuiscono al CLS da correggere. */
+@font-face {
+  font-family: "Beatrice Trial Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Helvetica"), local("Helvetica Neue");
+  unicode-range: U+0020, U+002E, U+0030-0039, U+0041-005A, U+0061-007A;
+  ascent-override: 104.4%;
+  descent-override: 41.7%;
+  line-gap-override: 0%;
+  size-adjust: 101.7%;
+}
+:root {
+  --body-font-family: "Beatrice Trial", "Beatrice Trial Fallback", sans-serif;
+  --heading-font-family: "Beatrice Trial", "Beatrice Trial Fallback", sans-serif;
+}
+
 /* Il tema Gencyo imposta strong/b su #333 (pensato per sfondi chiari): sul nostro
    body-bg quasi nero (#0D0D0D) il testo in grassetto risulta praticamente invisibile.
    Lo riportiamo al bianco dei titoli, come il resto del testo body chiaro-su-scuro. */
