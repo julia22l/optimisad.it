@@ -971,10 +971,6 @@ awardBlocks.forEach((block) => {
 
 
 
-	$(document).ready(function () {
-		$("select").niceSelect();
-	});
-
 	//>> Video Popup Start <<//
 	$(".img-popup").magnificPopup({
 		type: "image",
