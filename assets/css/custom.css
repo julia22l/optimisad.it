@@ -398,3 +398,11 @@ a.arrow-link:hover {
   opacity: 0.65;
   margin-top: 30px;
 }
+
+/* Il tema disattiva tutti i <br> sotto i 768px (style.css, pensato per non
+   forzare interruzioni di riga nei titoli su mobile) — ma nel credit line
+   del footer il <br> separa contenuto (email da dati legali), non è uno
+   stile: senza, "On-Page" e "info@optimisad.it" si incollano senza spazio. */
+.footer-bottom-wrapper p br {
+  display: inline;
+}
