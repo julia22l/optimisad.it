@@ -972,18 +972,22 @@ awardBlocks.forEach((block) => {
 
 
 	//>> Video Popup Start <<//
-	$(".img-popup").magnificPopup({
-		type: "image",
-		gallery: {
-			enabled: true,
-		},
-	});
+	if ($(".img-popup").length) {
+		$(".img-popup").magnificPopup({
+			type: "image",
+			gallery: {
+				enabled: true,
+			},
+		});
+	}
 
-	$('.video-popup').magnificPopup({
-		type: 'iframe',
-		callbacks: {
-		}
-	});
+	if ($('.video-popup').length) {
+		$('.video-popup').magnificPopup({
+			type: 'iframe',
+			callbacks: {
+			}
+		});
+	}
 
 	// Elements Animation
 	if ($('.wow').length) {
