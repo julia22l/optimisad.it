@@ -292,6 +292,18 @@ a.arrow-link:hover {
   display: flex;
   align-items: center;
 }
+/* 5 stelline decorative sopra la citazione: le recensioni sono reali (LinkedIn,
+   vedi sotto) ma LinkedIn non ha un sistema di voto a stelle, quindi non c'è un
+   punteggio autentico da mostrare — è un elemento visivo per rendere le card più
+   accattivanti senza una foto cliente, non un dato. Per questo non è accompagnato
+   da alcun markup Review/AggregateRating nello schema.org (vedi nota sotto). */
+.home-testimonials-section .testimonial-block-one .inner-box .star {
+  color: var(--theme-color1);
+  margin-bottom: 16px;
+}
+.home-testimonials-section .testimonial-block-one .inner-box .star i {
+  margin: 0 2px;
+}
 
 /* Blocco statistiche a numero (sezione "Un po' di numeri", home) */
 .numbers-row {
