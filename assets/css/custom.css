@@ -427,3 +427,12 @@ a.arrow-link:hover {
 .footer-bottom-wrapper p br {
   display: inline;
 }
+
+/* Il badge Google Partner (SVG di gstatic.com) non ha width/height nel tag
+   <svg> root (solo viewBox) — dentro .footer-bottom-wrapper (display:flex)
+   il browser lo calcola a 0x0 e sparisce del tutto senza una size esplicita. */
+.footer-bottom-wrapper .partner-badge {
+  height: 40px;
+  width: auto;
+  flex-shrink: 0;
+}
