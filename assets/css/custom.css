@@ -454,3 +454,18 @@ a.arrow-link:hover {
   display: inline-block;
   margin-top: 20px;
 }
+
+/* Badge nell'header, accanto al pulsante "Prenota una chiamata": altezza
+   ridotta a 40px per allinearsi al .contact-btn (stessa altezza, vedi
+   style.css) invece dei 72px usati nel footer. Nascosto sotto i 1023px
+   insieme al resto di .ui-btn-outer (stesso breakpoint di .contact-btn),
+   la testata mobile è già stretta con solo logo + hamburger. */
+.header-1 .ui-btn-outer .partner-badge {
+  height: 40px;
+  width: auto;
+}
+@media (max-width: 1023px) {
+  .header-1 .ui-btn-outer .header-partner-badge {
+    display: none;
+  }
+}
