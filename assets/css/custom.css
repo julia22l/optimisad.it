@@ -292,17 +292,18 @@ a.arrow-link:hover {
   display: flex;
   align-items: center;
 }
-/* 5 stelline decorative sopra la citazione: le recensioni sono reali (LinkedIn,
-   vedi sotto) ma LinkedIn non ha un sistema di voto a stelle, quindi non c'è un
-   punteggio autentico da mostrare — è un elemento visivo per rendere le card più
-   accattivanti senza una foto cliente, non un dato. Per questo non è accompagnato
-   da alcun markup Review/AggregateRating nello schema.org (vedi nota sotto). */
-.home-testimonials-section .testimonial-block-one .inner-box .star {
-  color: var(--theme-color1);
-  margin-bottom: 16px;
+/* Icona virgolette decorativa sopra la citazione (non stelline: le recensioni
+   sono reali - LinkedIn, vedi sotto - ma LinkedIn non ha un sistema di voto a
+   stelle, quindi delle stelle implicherebbero un punteggio che non esiste).
+   fa-quote-left::before non è definito nel fontawesome.css purgato (icona non
+   usata al momento della purge, vedi Performance sopra) — ridichiarato qui. */
+.fa-quote-left::before {
+  content: "\f10d";
 }
-.home-testimonials-section .testimonial-block-one .inner-box .star i {
-  margin: 0 2px;
+.home-testimonials-section .testimonial-block-one .inner-box .quote-icon {
+  color: var(--theme-color1);
+  font-size: 28px;
+  margin-bottom: 16px;
 }
 
 /* Blocco statistiche a numero (sezione "Un po' di numeri", home) */
