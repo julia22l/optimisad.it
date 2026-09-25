@@ -1,3 +1,14 @@
 CLAUDE.md
 .claude/
 skills-lock.json
+
+# --- added by cdforge ---
+/.devcontainer/claude-home/
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+README.md
+CHANGELOG.md
+.cdforge.json
+.devcontainer/
+.githooks/
